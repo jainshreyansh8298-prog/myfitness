@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --connect-timeout 20 --user 'myfitnesscmsdev:+z9zAIbMxgv\\)XgEN' 'ftp://190.92.174.128/public_html/')",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(mkdir -p /c/Users/Vandana/php/extras/ssl)",
+      "Bash(curl -sSL --connect-timeout 30 -o /c/Users/Vandana/php/extras/ssl/cacert.pem \"https://curl.se/ca/cacert.pem\")",
+      "Bash(/c/Users/Vandana/php/php.exe -c \"C:\\\\Users\\\\Vandana\\\\php\\\\php.ini\" artisan db:seed --force)",
+      "Bash(/c/Users/Vandana/php/php.exe -c \"C:\\\\Users\\\\Vandana\\\\php\\\\php.ini\" artisan tinker --execute='echo \"users=\".\\\\App\\\\Models\\\\User::count\\(\\).\" faqs=\".DB::table\\(\"faqs\"\\)->count\\(\\).\" areas=\".DB::table\\(\"areas\"\\)->count\\(\\).\" site_settings=\".DB::table\\(\"site_settings\"\\)->count\\(\\);')",
+      "Bash(curl -s -o /dev/null -w \"homepage HTTP %{http_code}\\\\n\" --max-time 10 http://127.0.0.1:8000/)",
+      "Bash(/c/Users/Vandana/php/php.exe -c 'C:\\\\Users\\\\Vandana\\\\php\\\\php.ini' artisan tinker '--execute= *)"
+    ]
+  }
+}
