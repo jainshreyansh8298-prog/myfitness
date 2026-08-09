@@ -31,6 +31,9 @@
                                 <a class="nav-link active" id="brand-tab" data-toggle="tab" href="#brand" role="tab" aria-controls="brand" aria-selected="true">Colors</a>
                             </li>
                             <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="branding-tab" data-toggle="tab" href="#branding" role="tab" aria-controls="branding" aria-selected="false">Logo &amp; Font</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="hero-tab" data-toggle="tab" href="#hero" role="tab" aria-controls="hero" aria-selected="false">Hero</a>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -79,6 +82,42 @@
                                 <div class="form-group">
                                     <label class="font-weight-bold">Preloader Loading Text</label>
                                     <input type="text" name="preloader_text" class="form-control" value="{{ $settings['preloader_text'] }}">
+                                </div>
+                            </div>
+
+                            <!-- Tab: Logo & Font (Branding) -->
+                            <div class="tab-pane fade" id="branding" role="tabpanel" aria-labelledby="branding-tab">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Brand Name (used as text fallback if no logo)</label>
+                                    <input type="text" name="brand_name" class="form-control" value="{{ $settings['brand_name'] }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Site Logo</label>
+                                    @if(!empty($settings['site_logo']))
+                                        <div class="mb-2 p-2 rounded text-center" style="background:#f8f9fc;">
+                                            <img src="{{ $settings['site_logo'] }}" alt="Current logo" style="max-height:60px; width:auto;">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="site_logo" class="form-control-file" accept="image/*">
+                                    <small class="text-muted">Upload a PNG/SVG/JPG once — it updates <strong>all logos at the same time</strong>: site header, footer, admin sidebar &amp; favicon. Leave empty to keep the current logo.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Website Font</label>
+                                    @php
+                                        $fontOptions = ['Inter','Poppins','Roboto','Montserrat','Open Sans','Lato','Nunito','Raleway','Rubik','Work Sans','Manrope','Mulish','DM Sans','Oswald'];
+                                    @endphp
+                                    <select name="site_font" class="form-control" id="siteFontSelect">
+                                        @foreach($fontOptions as $font)
+                                            <option value="{{ $font }}" {{ $settings['site_font'] == $font ? 'selected' : '' }}>{{ $font }}</option>
+                                        @endforeach
+                                    </select>
+                                    <small class="text-muted">Applied across the entire website (headings, body & buttons).</small>
+                                    <div class="mt-3 p-3 rounded" style="background:#f8f9fc;">
+                                        <span class="text-muted d-block mb-1"><small>Live preview</small></span>
+                                        <span id="fontPreview" style="font-size:1.4rem; font-weight:700;">The quick brown fox — MyFitness 123</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -178,6 +217,11 @@
 
                             <!-- Tab: Sections -->
                             <div class="tab-pane fade" id="sections" role="tabpanel" aria-labelledby="sections-tab">
+                                <div class="custom-control custom-switch mb-3 p-2 rounded" style="background:#fff8e1; padding-left:2.5rem !important;">
+                                    <input type="checkbox" class="custom-control-input" id="swAnnouncements" name="show_announcements" value="1" {{ $settings['show_announcements'] == '1' ? 'checked' : '' }}>
+                                    <label class="custom-control-label font-weight-bold" for="swAnnouncements"><i class="fas fa-bullhorn text-warning mr-1"></i>Announcement Bar (master switch)</label>
+                                    <small class="d-block text-muted">Turn OFF to hide the running announcement bar entirely, regardless of individual announcements.</small>
+                                </div>
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swHero" name="show_hero_video" value="1" {{ $settings['show_hero_video'] == '1' ? 'checked' : '' }}>
                                     <label class="custom-control-label font-weight-bold" for="swHero">Hero Workout Video Section</label>
@@ -189,6 +233,16 @@
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swWhyUs" name="show_why_us" value="1" {{ $settings['show_why_us'] == '1' ? 'checked' : '' }}>
                                     <label class="custom-control-label font-weight-bold" for="swWhyUs">Why Choose Us Feature Section</label>
+                                </div>
+                                <div class="custom-control custom-switch mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="swCoaches" name="show_coaches" value="1" {{ $settings['show_coaches'] == '1' ? 'checked' : '' }}>
+                                    <label class="custom-control-label font-weight-bold" for="swCoaches">Meet Our Coaches Section</label>
+                                </div>
+                                <div class="form-group pl-4 mb-4">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Coaches Section Heading</label>
+                                    <input type="text" name="coaches_heading" class="form-control form-control-sm mb-2" value="{{ $settings['coaches_heading'] }}">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Coaches Section Subheading</label>
+                                    <input type="text" name="coaches_subheading" class="form-control form-control-sm" value="{{ $settings['coaches_subheading'] }}">
                                 </div>
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swTestimonials" name="show_testimonials" value="1" {{ $settings['show_testimonials'] == '1' ? 'checked' : '' }}>
@@ -331,6 +385,27 @@
                     });
                 }
             }
+        });
+
+        // Live font preview in the Branding tab
+        document.addEventListener('DOMContentLoaded', function () {
+            const fontSelect = document.getElementById('siteFontSelect');
+            const preview = document.getElementById('fontPreview');
+            if (!fontSelect || !preview) return;
+
+            const loaded = {};
+            function applyFont(name) {
+                if (!loaded[name]) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://fonts.googleapis.com/css2?family=' + name.replace(/ /g, '+') + ':wght@400;500;600;700&display=swap';
+                    document.head.appendChild(link);
+                    loaded[name] = true;
+                }
+                preview.style.fontFamily = "'" + name + "', sans-serif";
+            }
+            applyFont(fontSelect.value);
+            fontSelect.addEventListener('change', function () { applyFont(this.value); });
         });
     </script>
 </x-dashboard.main-layout>

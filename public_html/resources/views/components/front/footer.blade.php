@@ -18,10 +18,15 @@
         <div class="row g-5 mb-5">
             <!-- Brand Info & Reach Us -->
             <div class="col-lg-4 col-md-6 pe-lg-5">
+                @php $footerLogo = \App\Models\SiteSetting::get('site_logo', '') ?: config('app.logo'); @endphp
                 <a href="/" class="d-inline-block text-decoration-none mb-4">
-                    <div class="footer-brand m-0" style="font-size: 2.5rem;">
-                        <span style="color: var(--color-text);">MY</span><span class="text-gradient">FITNESS</span>
-                    </div>
+                    @if($footerLogo)
+                        <img src="{{ $footerLogo }}" alt="{{ \App\Models\SiteSetting::get('brand_name', 'MyFitness') }} Logo" style="height: 60px; width: auto; object-fit: contain;">
+                    @else
+                        <div class="footer-brand m-0" style="font-size: 2.5rem;">
+                            <span style="color: var(--color-text);">MY</span><span class="text-gradient">FITNESS</span>
+                        </div>
+                    @endif
                 </a>
 
 
@@ -72,6 +77,7 @@
                 <div class="d-flex flex-column gap-3 mt-4">
                     <a href="{{ route('front.about') }}" class="footer-link m-0" style="font-size: 1.05rem;">About Us</a>
                     <a href="{{ route('front.services') }}" class="footer-link m-0" style="font-size: 1.05rem;">Services</a>
+                    <a href="{{ route('front.coaches') }}" class="footer-link m-0" style="font-size: 1.05rem;">Coaches</a>
                     <a href="{{ route('front.blogs') }}" class="footer-link m-0" style="font-size: 1.05rem;">Blog</a>
                     <a href="{{ route('front.contact') }}" class="footer-link m-0" style="font-size: 1.05rem;">Contact</a>
                     <a href="{{ route('front.faq') }}" class="footer-link m-0" style="font-size: 1.05rem;">FAQ</a>

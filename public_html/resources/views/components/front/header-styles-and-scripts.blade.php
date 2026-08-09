@@ -11,13 +11,22 @@
     <meta name="keywords" content="{{ $keywords }}">
     <meta name="author" content="MyFitness">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel=icon href="{{ config('app.logo') }}" type="icon/png">
+    @php $faviconLogo = \App\Models\SiteSetting::get('site_logo', ''); @endphp
+    <link rel=icon href="{{ $faviconLogo ?: config('app.logo') }}" type="icon/png">
     <link rel="canonical" href="{{ Request::fullUrl() }}" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    @php
+        $siteFont = \App\Models\SiteSetting::get('site_font', 'Inter');
+        $fontParam = str_replace(' ', '+', $siteFont);
+    @endphp
+    @if($siteFont && $siteFont !== 'Inter')
+        <link href="https://fonts.googleapis.com/css2?family={{ $fontParam }}:wght@400;500;600;700&display=swap" rel="stylesheet">
+    @endif
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,6 +55,16 @@
             --brand-bg: {{ $bgColor }} !important;
             --brand-text: {{ $textColor }} !important;
             --brand-button-text: {{ $btnTextColor }} !important;
+            --brand-font: '{{ $siteFont }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Site-wide font (admin-configurable) */
+        body, .premium-theme,
+        h1, h2, h3, h4, h5, h6,
+        p, a, span, li, label,
+        button, input, textarea, select,
+        .btn-premium, .nav-link {
+            font-family: var(--brand-font) !important;
         }
     </style>
 </head>

@@ -19,6 +19,11 @@ class SiteSettingService
 
         return [
             'brand_name'          => SiteSetting::get('brand_name', 'My Fitness'),
+
+            // Branding: site-wide font & logo
+            'site_font'           => SiteSetting::get('site_font', 'Inter'),
+            'site_logo'           => SiteSetting::get('site_logo', ''),
+
             'primary_color'       => SiteSetting::get('primary_color', '#dfff00'),
             'secondary_color'     => SiteSetting::get('secondary_color', '#00f2fe'),
             'bg_color'            => SiteSetting::get('bg_color', '#0b0d14'),
@@ -32,6 +37,8 @@ class SiteSettingService
             
             'hero_title'          => SiteSetting::get('hero_title', 'ELEVATE YOUR FITNESS JOURNEY WITH EXPERT PERSONAL TRAINERS'),
             'hero_subtitle'       => SiteSetting::get('hero_subtitle', 'Certified trainers at your home, gym, or pool across Dubai & UAE. Flexible scheduling & guaranteed transformation.'),
+
+            'show_announcements'  => SiteSetting::get('show_announcements', '1'),
 
             'show_ticker'         => SiteSetting::get('show_ticker', '1'),
             'ticker_text'         => SiteSetting::get('ticker_text', '🔥 EXCLUSIVE OFFER: Get 10% OFF your first booking! Code: FIRST10'),
@@ -50,6 +57,11 @@ class SiteSettingService
             'show_testimonials'   => SiteSetting::get('show_testimonials', '1'),
             'show_blogs'          => SiteSetting::get('show_blogs', '1'),
             'show_faqs'           => SiteSetting::get('show_faqs', '1'),
+
+            // Coaches section
+            'show_coaches'        => SiteSetting::get('show_coaches', '1'),
+            'coaches_heading'     => SiteSetting::get('coaches_heading', 'Meet Our Coaches'),
+            'coaches_subheading'  => SiteSetting::get('coaches_subheading', 'Train with certified experts dedicated to your transformation.'),
 
             'social_instagram'    => SiteSetting::get('social_instagram', ''),
             'show_instagram'      => SiteSetting::get('show_instagram', '0'),

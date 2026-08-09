@@ -4,6 +4,8 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\Dashboard\AnnouncementController;
+use App\Http\Controllers\Dashboard\CoachController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DiscountLeadController;
 use App\Http\Controllers\Dashboard\ProfileController;
@@ -36,6 +38,12 @@ Route::group([
 
     // Testimonial CMS
     Route::resource('testimonials', TestimonialController::class)->except(['show']);
+
+    // Announcements (top running bar, permanent or auto-expiring)
+    Route::resource('announcements', AnnouncementController::class)->except(['show']);
+
+    // Coaches ("Meet our Coaches" section)
+    Route::resource('coaches', CoachController::class)->except(['show']);
 
     // Discount Popup Lead Emails
     Route::get('discount-leads', [DiscountLeadController::class, 'index'])->name('discount-leads.index');

@@ -37,6 +37,9 @@
         <x-front.why-choose-us />
     @endif
 
+    <x-front.coaches />
+
+
 
     @if($showBlogs == '1')
         <x-front.blog-slider :blogs="$blogs"/>

@@ -36,6 +36,7 @@ Route::get('services', [PagesController::class, 'services'])->name('front.servic
 Route::get('services/{service}', [PagesController::class, 'serviceDetails'])->name('front.serviceDetails');
 Route::get('blogs', [PagesController::class, 'blogs'])->name('front.blogs');
 Route::get('blogs/{blog}', [PagesController::class, 'singleBlog'])->name('front.blogDetails');
+Route::get('coaches', [PagesController::class, 'coaches'])->name('front.coaches');
 Route::get('privacy-policy', [PagesController::class, 'privacyPolicy'])->name('front.privacyPolicy');
 Route::get('terms-conditions', [PagesController::class, 'termsConditions'])->name('front.termsConditions');
 Route::get('faq', [PagesController::class, 'faq'])->name('front.faq');

@@ -10,6 +10,7 @@
 <x-front.preloader />
 
 <body class="premium-theme">
+    <x-front.announcement-bar />
     <x-front.moving-banner />
     <x-front.header />
     
