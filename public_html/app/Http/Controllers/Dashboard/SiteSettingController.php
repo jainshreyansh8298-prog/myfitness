@@ -54,6 +54,21 @@ class SiteSettingController extends Controller
             }
         }
 
+        // Login background image upload (Pages tab).
+        unset($data['login_bg_image']);
+        if ($request->hasFile('login_bg_image')) {
+            $file = $request->file('login_bg_image');
+            if ($file->isValid()) {
+                $oldBg = SiteSetting::get('login_bg_image');
+                $path = $file->store('backgrounds', 'public');
+                $data['login_bg_image'] = \Illuminate\Support\Facades\Storage::url($path);
+
+                if ($oldBg && \Illuminate\Support\Str::startsWith($oldBg, '/storage/')) {
+                    \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $oldBg));
+                }
+            }
+        }
+
         $heroSlides = $data['hero_slides'] ?? [];
         if (is_array($heroSlides)) {
             $validSlides = [];

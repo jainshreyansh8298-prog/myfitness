@@ -43,7 +43,7 @@
             </div>
             
             <!-- Mobile Menu Toggle Button -->
-            <button class="d-lg-none btn p-0 text-white" id="mobileMenuToggle" style="border: none; background: transparent; font-size: 1.5rem;" aria-label="Toggle Navigation">
+            <button class="d-lg-none btn p-0" id="mobileMenuToggle" style="border: none; background: transparent; font-size: 1.5rem; color: var(--color-text);" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
             </button>
         </div>

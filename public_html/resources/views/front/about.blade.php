@@ -2,7 +2,6 @@
     <section class="premium-section" style="padding-top: 120px;">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="hero-badge mb-2">DOORSTEP WELLNESS REVOLUTION</span>
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
                     ABOUT <span class="text-gradient">MY FITNESS</span>
                 </h1>

@@ -48,6 +48,9 @@
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="socials-tab" data-toggle="tab" href="#socials" role="tab" aria-controls="socials" aria-selected="false">Socials</a>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pages-tab" data-toggle="tab" href="#pages" role="tab" aria-controls="pages" aria-selected="false">Pages</a>
+                            </li>
                         </ul>
 
                         <!-- Tab Panes -->
@@ -290,12 +293,37 @@
 
                                 <div class="form-group border p-3 rounded">
                                     <div class="custom-control custom-switch mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="swFacebook" name="show_facebook" value="1" {{ $settings['show_facebook'] == '1' ? 'checked' : '' }}>
+                                        <label class="custom-control-label font-weight-bold" for="swFacebook">Enable Facebook</label>
+                                    </div>
+                                    <input type="text" name="social_facebook" class="form-control" placeholder="Facebook Profile URL" value="{{ $settings['social_facebook'] }}">
+                                </div>
+
+                                <div class="form-group border p-3 rounded">
+                                    <div class="custom-control custom-switch mb-2">
                                         <input type="checkbox" class="custom-control-input" id="swWhatsapp" name="show_whatsapp" value="1" {{ $settings['show_whatsapp'] == '1' ? 'checked' : '' }}>
                                         <label class="custom-control-label font-weight-bold" for="swWhatsapp">Enable WhatsApp</label>
                                     </div>
                                     <input type="text" name="social_whatsapp" class="form-control" placeholder="WhatsApp Link (e.g. https://wa.me/971...)" value="{{ $settings['social_whatsapp'] }}">
                                 </div>
                             </div>
+
+                            <!-- Tab: Pages -->
+                            <div class="tab-pane fade" id="pages" role="tabpanel" aria-labelledby="pages-tab">
+                                <h6 class="font-weight-bold mb-3"><i class="fas fa-sign-in-alt mr-2"></i>Login Page Background</h6>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Background Image</label>
+                                    @if(!empty($settings['login_bg_image']))
+                                        <div class="mb-2 p-2 rounded text-center" style="background:#f8f9fc;">
+                                            <img src="{{ $settings['login_bg_image'] }}" alt="Login background" style="max-height:120px; width:auto; border-radius:8px;">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="login_bg_image" class="form-control-file" accept="image/*">
+                                    <small class="text-muted">Upload a background image for the login page. Leave empty to keep the current image. If no image is set, the default gradient background is used.</small>
+                                </div>
+                            </div>
+
+                        </div>
                         </div>
                     </div>
                 </div>

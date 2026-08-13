@@ -69,8 +69,13 @@ class SiteSettingService
             'show_twitter'        => SiteSetting::get('show_twitter', '0'),
             'social_linkedin'     => SiteSetting::get('social_linkedin', ''),
             'show_linkedin'       => SiteSetting::get('show_linkedin', '0'),
+            'social_facebook'     => SiteSetting::get('social_facebook', ''),
+            'show_facebook'       => SiteSetting::get('show_facebook', '0'),
             'social_whatsapp'     => SiteSetting::get('social_whatsapp', 'https://wa.me/971585858348'),
             'show_whatsapp'       => SiteSetting::get('show_whatsapp', '1'),
+
+            // Page backgrounds
+            'login_bg_image'      => SiteSetting::get('login_bg_image', ''),
         ];
     }
 

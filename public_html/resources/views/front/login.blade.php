@@ -1,14 +1,23 @@
 <x-front.main-layout title="Login | MyFitness Dubai">
-    <section class="premium-section" style="padding-top: 140px; min-height: 100vh; display: flex; align-items: center; position: relative;">
-        <!-- Background Elements -->
-        <div style="position: absolute; top: -20%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
-        <div style="position: absolute; bottom: -20%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+    @php
+        $loginBg = \App\Models\SiteSetting::get('login_bg_image', '');
+    @endphp
+    <section class="premium-section" style="padding-top: 140px; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+        <!-- Background -->
+        @if($loginBg)
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none;">
+                <img src="{{ $loginBg }}" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(9,9,11,0.75);"></div>
+            </div>
+        @else
+            <div style="position: absolute; top: -20%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+            <div style="position: absolute; bottom: -20%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+        @endif
 
         <div class="container" style="position: relative; z-index: 1;">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-8">
                     <div class="text-center mb-4">
-                        <span class="hero-badge mb-2">WELCOME BACK</span>
                         <h1 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase;">
                             SIGN <span class="text-gradient">IN</span>
                         </h1>
