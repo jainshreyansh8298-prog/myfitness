@@ -94,7 +94,7 @@
                                 <input type="text" name="promo_code" class="form-control" placeholder="Enter discount code" style="background: var(--brand-bg); border: 1px solid var(--brand-card-border); color: var(--brand-text); height: 52px; border-radius: 8px; text-transform: uppercase;">
                             </div>
 
-                            <button type="submit" class="btn-cult-primary w-100" style="height: 56px; font-size: 1.1rem !important;">
+                            <button type="submit" class="btn-cult-primary w-100" style="height: 56px; font-size: 1.1rem !important; background: var(--color-btn-bg); color: var(--brand-button-text);">
                                 PROCEED TO BOOKING <i class="fas fa-arrow-right ms-2"></i>
                             </button>
                         </form>

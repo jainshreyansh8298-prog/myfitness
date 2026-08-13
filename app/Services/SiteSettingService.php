@@ -19,19 +19,39 @@ class SiteSettingService
 
         return [
             'brand_name'          => SiteSetting::get('brand_name', 'My Fitness'),
+
+            // Branding: site-wide font & logo
+            'site_font'           => SiteSetting::get('site_font', 'Inter'),
+            'site_logo'           => SiteSetting::get('site_logo', ''),
+
             'primary_color'       => SiteSetting::get('primary_color', '#dfff00'),
             'secondary_color'     => SiteSetting::get('secondary_color', '#00f2fe'),
             'bg_color'            => SiteSetting::get('bg_color', '#0b0d14'),
             'text_color'          => SiteSetting::get('text_color', '#fafafa'),
             'button_text_color'   => SiteSetting::get('button_text_color', '#000000'),
+            
+            // New fine-grained controls
+            'card_color'          => SiteSetting::get('card_color', '#f4f4f5'),
+            'card_hover_color'    => SiteSetting::get('card_hover_color', '#e4e4e7'),
+            'btn_bg_color'        => SiteSetting::get('btn_bg_color', '#1a1a2e'),
+            'btn_hover_color'     => SiteSetting::get('btn_hover_color', '#4DBFAA'),
+            'btn_hover_text_color'=> SiteSetting::get('btn_hover_text_color', '#ffffff'),
+            'testimonial_color'   => SiteSetting::get('testimonial_color', '#f4f4f5'),
+            'hero_title_color'    => SiteSetting::get('hero_title_color', '#1a1a2e'),
+            'hero_sub_color'      => SiteSetting::get('hero_sub_color', '#71717a'),
+            'footer_icon_color'   => SiteSetting::get('footer_icon_color', '#4DBFAA'),
+            'stats_number_color'  => SiteSetting::get('stats_number_color', '#4DBFAA'),
+            
             'preloader_color'     => SiteSetting::get('preloader_color', '#10b981'),
-            'preloader_text'      => SiteSetting::get('preloader_text', 'myfitness.ae'),
+            'preloader_text'      => SiteSetting::get('preloader_text', ''),
             
             'hero_slides'         => json_decode($heroSlidesRaw, true),
             'hero_fade_effect'    => SiteSetting::get('hero_fade_effect', '1'),
             
-            'hero_title'          => SiteSetting::get('hero_title', 'ELEVATE YOUR FITNESS JOURNEY WITH EXPERT PERSONAL TRAINERS'),
-            'hero_subtitle'       => SiteSetting::get('hero_subtitle', 'Certified trainers at your home, gym, or pool across Dubai & UAE. Flexible scheduling & guaranteed transformation.'),
+            'hero_title'          => SiteSetting::get('hero_title', 'FITNESS AT DOORSTEP'),
+            'hero_subtitle'       => SiteSetting::get('hero_subtitle', 'Experience fitness delivered to you - at your home or online!'),
+
+            'show_announcements'  => SiteSetting::get('show_announcements', '1'),
 
             'show_ticker'         => SiteSetting::get('show_ticker', '1'),
             'ticker_text'         => SiteSetting::get('ticker_text', '🔥 EXCLUSIVE OFFER: Get 10% OFF your first booking! Code: FIRST10'),
@@ -51,14 +71,24 @@ class SiteSettingService
             'show_blogs'          => SiteSetting::get('show_blogs', '1'),
             'show_faqs'           => SiteSetting::get('show_faqs', '1'),
 
+            // Coaches section
+            'show_coaches'        => SiteSetting::get('show_coaches', '1'),
+            'coaches_heading'     => SiteSetting::get('coaches_heading', 'Meet Our Coaches'),
+            'coaches_subheading'  => SiteSetting::get('coaches_subheading', 'Train with certified experts dedicated to your transformation.'),
+
             'social_instagram'    => SiteSetting::get('social_instagram', ''),
             'show_instagram'      => SiteSetting::get('show_instagram', '0'),
             'social_twitter'      => SiteSetting::get('social_twitter', ''),
             'show_twitter'        => SiteSetting::get('show_twitter', '0'),
             'social_linkedin'     => SiteSetting::get('social_linkedin', ''),
             'show_linkedin'       => SiteSetting::get('show_linkedin', '0'),
+            'social_facebook'     => SiteSetting::get('social_facebook', ''),
+            'show_facebook'       => SiteSetting::get('show_facebook', '0'),
             'social_whatsapp'     => SiteSetting::get('social_whatsapp', 'https://wa.me/971585858348'),
             'show_whatsapp'       => SiteSetting::get('show_whatsapp', '1'),
+
+            // Page backgrounds
+            'login_bg_image'      => SiteSetting::get('login_bg_image', ''),
         ];
     }
 

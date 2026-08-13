@@ -3,7 +3,7 @@
         <div class="container">
             <div class="text-center mb-5 mt-5">
                 <h1 style="font-size: 3rem; font-weight: 800; color: var(--brand-text); letter-spacing: -1px;">
-                    Frequently Asked <span class="text-gradient">Questions</span>
+                    Frequently Asked <span style="color: var(--color-primary);">Questions</span>
                 </h1>
                 <p style="color: var(--brand-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; margin-top: 15px;">
                     Everything you need to know about our premium fitness services, bookings, and more.

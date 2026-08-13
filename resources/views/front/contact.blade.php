@@ -2,12 +2,11 @@
     <section class="premium-section" style="padding-top: 120px;">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="hero-badge mb-2">WE ARE HERE TO HELP YOU</span>
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
-                    GET IN <span class="text-gradient">TOUCH</span>
+                    BECOME A <span style="color: var(--color-primary);">PARTNER</span>
                 </h1>
-                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
-                    Have questions about personal training packages or booking? Reach out to our dedicated support team.
+                <p style="color: var(--color-text-muted); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                    Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
                 </p>
             </div>
 
@@ -15,25 +14,25 @@
                 <!-- Left: Contact Form -->
                 <div class="col-lg-7">
                     <div class="glass-panel" style="border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                        <h3 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 30px;">SEND US A <span class="text-gradient">MESSAGE</span></h3>
+                        <h3 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 30px;">SEND US A <span style="color: var(--color-primary);">MESSAGE</span></h3>
 
                         <form action="{{ route('form.store') }}" method="POST">
                             @csrf
                             <div class="row g-4 mb-4">
                                 <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" required placeholder="Your Full Name *" style="background: rgba(9,9,11,0.6); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
+                                    <input type="text" name="name" class="form-control" required placeholder="Your Full Name *" style="background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" required placeholder="Your Email Address *" style="background: rgba(9,9,11,0.6); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
+                                    <input type="email" name="email" class="form-control" required placeholder="Your Email Address *" style="background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
                                 </div>
                             </div>
 
                             <div class="mb-4">
-                                <input type="text" name="phone" class="form-control" required placeholder="Phone / WhatsApp Number *" style="background: rgba(9,9,11,0.6); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
+                                <input type="text" name="phone" class="form-control" required placeholder="Phone / WhatsApp Number *" style="background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); height: 56px; border-radius: 12px; font-size: 1rem; padding: 0 20px;">
                             </div>
 
                             <div class="mb-5">
-                                <textarea name="message" class="form-control" rows="6" required placeholder="How can we help you with your fitness goals? *" style="background: rgba(9,9,11,0.6); border: 1px solid var(--color-border); color: var(--color-text); border-radius: 12px; font-size: 1rem; padding: 20px;"></textarea>
+                                <textarea name="message" class="form-control" rows="6" required placeholder="How can we help you with your fitness goals? *" style="background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); border-radius: 12px; font-size: 1rem; padding: 20px;"></textarea>
                             </div>
 
                             <button type="submit" class="btn-premium btn-accent w-100" style="height: 60px; font-size: 1.05rem;">
@@ -62,7 +61,7 @@
                             </div>
                             <div>
                                 <div style="color: var(--color-text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Email Us</div>
-                                <a href="mailto:hello@myfitness.ae" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">hello@myfitness.ae</a>
+                                <a href="mailto:info@myfitness.ae" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">info@myfitness.ae</a>
                             </div>
                         </div>
 
@@ -72,7 +71,7 @@
                             </div>
                             <div>
                                 <div style="color: var(--color-text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Head Office</div>
-                                <div style="color: var(--color-text); font-size: 1rem; font-weight: 700; line-height: 1.5;">Compass Building, Ras Al Khaimah & Dubai Marina, UAE</div>
+                                <div style="color: var(--color-text); font-size: 1rem; font-weight: 700; line-height: 1.5;">Dubai, UAE</div>
                             </div>
                         </div>
                     </div>

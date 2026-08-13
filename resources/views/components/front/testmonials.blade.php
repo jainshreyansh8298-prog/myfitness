@@ -33,7 +33,7 @@
                                  class="premium-author-img"
                                  onError="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'">
                             <div>
-                                <h5 class="mb-1 fw-bold text-light" style="font-size: 1.1rem;">{{ $test->name }}</h5>
+                                <h5 class="mb-1 fw-bold text-light" style="font-size: 1.1rem; color: var(--brand-text) !important;">{{ $test->name }}</h5>
                                 <span style="color: var(--brand-primary); font-size: 0.9rem; font-weight: 600;">{{ $test->role_location ?: 'Verified Client' }}</span>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
 
 <style>
     .premium-testimonial-card {
-        background: rgba(30, 41, 59, 0.6);
+        background: var(--color-testimonial-bg);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -86,9 +86,9 @@
 
     .premium-testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 20px 40px var(--color-shadow);
         border-color: rgba(255, 255, 255, 0.15);
-        background: rgba(30, 41, 59, 0.8);
+        background: var(--color-testimonial-bg);
     }
 
     .premium-testimonial-card:hover::before {

@@ -1,9 +1,17 @@
 <header class="premium-header glass-panel" style="backdrop-filter: blur(20px);">
     <div class="container d-flex align-items-center justify-content-between py-3">
         <!-- Logo / Brand Name -->
+        @php
+            $siteLogo  = \App\Models\SiteSetting::get('site_logo', '');
+            $brandName = \App\Models\SiteSetting::get('brand_name', config('app.name', 'MyFitness'));
+        @endphp
         <a href="/" class="d-flex align-items-center text-decoration-none">
-            @if(config('app.logo'))
-                <img src="{{ asset(config('app.logo')) }}" alt="MyFitness Logo" style="height: 55px; width: auto; object-fit: contain;">
+            @if($siteLogo)
+                <img src="{{ $siteLogo }}" alt="{{ $brandName }} Logo" style="height: 55px; width: auto; object-fit: contain;">
+            @elseif(config('app.logo'))
+                <img src="{{ asset(config('app.logo')) }}" alt="{{ $brandName }} Logo" style="height: 55px; width: auto; object-fit: contain;">
+            @else
+                <span class="text-gradient" style="font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;">{{ $brandName }}</span>
             @endif
         </a>
 
@@ -11,6 +19,7 @@
         <nav class="d-none d-lg-flex align-items-center gap-2 gap-xl-4" style="margin-right: auto; margin-left: 40px;">
             <a href="/" class="nav-link {{ Route::is('front.home') ? 'active' : '' }}">Home</a>
             <a href="{{ route('front.services') }}" class="nav-link {{ Route::is('front.services*') ? 'active' : '' }}">Services</a>
+            <a href="{{ route('front.coaches') }}" class="nav-link {{ Route::is('front.coaches') ? 'active' : '' }}">Coaches</a>
             <a href="{{ route('front.about') }}" class="nav-link {{ Route::is('front.about') ? 'active' : '' }}">About</a>
             <a href="{{ route('front.blogs') }}" class="nav-link {{ Route::is('front.blogs*') ? 'active' : '' }}">Blogs</a>
         </nav>
@@ -34,7 +43,7 @@
             </div>
             
             <!-- Mobile Menu Toggle Button -->
-            <button class="d-lg-none btn p-0 text-white" id="mobileMenuToggle" style="border: none; background: transparent; font-size: 1.5rem;" aria-label="Toggle Navigation">
+            <button class="d-lg-none btn p-0" id="mobileMenuToggle" style="border: none; background: transparent; font-size: 1.5rem; color: var(--color-text);" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -45,6 +54,7 @@
 <div id="mobileNavMenu" class="mobile-nav-overlay d-lg-none">
     <a href="/" class="nav-link {{ Route::is('front.home') ? 'text-gradient' : '' }}">Home</a>
     <a href="{{ route('front.services') }}" class="nav-link {{ Route::is('front.services*') ? 'text-gradient' : '' }}">Services</a>
+    <a href="{{ route('front.coaches') }}" class="nav-link {{ Route::is('front.coaches') ? 'text-gradient' : '' }}">Coaches</a>
     <a href="{{ route('front.about') }}" class="nav-link {{ Route::is('front.about') ? 'text-gradient' : '' }}">About</a>
     <a href="{{ route('front.blogs') }}" class="nav-link {{ Route::is('front.blogs*') ? 'text-gradient' : '' }}">Blogs</a>
     <hr style="border-color: var(--color-border); margin: 20px 0;">

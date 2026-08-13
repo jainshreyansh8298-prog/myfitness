@@ -31,6 +31,9 @@
                                 <a class="nav-link active" id="brand-tab" data-toggle="tab" href="#brand" role="tab" aria-controls="brand" aria-selected="true">Colors</a>
                             </li>
                             <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="branding-tab" data-toggle="tab" href="#branding" role="tab" aria-controls="branding" aria-selected="false">Logo &amp; Font</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="hero-tab" data-toggle="tab" href="#hero" role="tab" aria-controls="hero" aria-selected="false">Hero</a>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -44,6 +47,9 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="socials-tab" data-toggle="tab" href="#socials" role="tab" aria-controls="socials" aria-selected="false">Socials</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pages-tab" data-toggle="tab" href="#pages" role="tab" aria-controls="pages" aria-selected="false">Pages</a>
                             </li>
                         </ul>
 
@@ -72,6 +78,53 @@
                                     <label class="font-weight-bold">Button Text Color</label>
                                     <input type="color" name="button_text_color" class="form-control" value="{{ $settings['button_text_color'] }}">
                                 </div>
+                                <div class="form-group border-top pt-3 mt-3">
+                                    <h6 class="font-weight-bold text-primary mb-3">Element Specific Colors</h6>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Card Background Color</label>
+                                        <input type="color" name="card_color" class="form-control" value="{{ $settings['card_color'] ?? '#f4f4f5' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Card Hover Background</label>
+                                        <input type="color" name="card_hover_color" class="form-control" value="{{ $settings['card_hover_color'] ?? '#e4e4e7' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Background (Normal)</label>
+                                        <input type="color" name="btn_bg_color" class="form-control" value="{{ $settings['btn_bg_color'] ?? '#1a1a2e' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Hover Background</label>
+                                        <input type="color" name="btn_hover_color" class="form-control" value="{{ $settings['btn_hover_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Hover Text</label>
+                                        <input type="color" name="btn_hover_text_color" class="form-control" value="{{ $settings['btn_hover_text_color'] ?? '#ffffff' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Footer Icon Color</label>
+                                        <input type="color" name="footer_icon_color" class="form-control" value="{{ $settings['footer_icon_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Stats Number Color (e.g. 5,000+)</label>
+                                        <input type="color" name="stats_number_color" class="form-control" value="{{ $settings['stats_number_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Testimonial Card Background</label>
+                                        <input type="color" name="testimonial_color" class="form-control" value="{{ $settings['testimonial_color'] ?? '#f4f4f5' }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group border-top pt-3 mt-3">
+                                    <h6 class="font-weight-bold text-primary mb-3">Preloader Settings</h6>
+                                </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Preloader Icon Color</label>
                                     <input type="color" name="preloader_color" class="form-control" value="{{ $settings['preloader_color'] }}">
@@ -79,6 +132,42 @@
                                 <div class="form-group">
                                     <label class="font-weight-bold">Preloader Loading Text</label>
                                     <input type="text" name="preloader_text" class="form-control" value="{{ $settings['preloader_text'] }}">
+                                </div>
+                            </div>
+
+                            <!-- Tab: Logo & Font (Branding) -->
+                            <div class="tab-pane fade" id="branding" role="tabpanel" aria-labelledby="branding-tab">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Brand Name (used as text fallback if no logo)</label>
+                                    <input type="text" name="brand_name" class="form-control" value="{{ $settings['brand_name'] }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Site Logo</label>
+                                    @if(!empty($settings['site_logo']))
+                                        <div class="mb-2 p-2 rounded text-center" style="background:#f8f9fc;">
+                                            <img src="{{ $settings['site_logo'] }}" alt="Current logo" style="max-height:60px; width:auto;">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="site_logo" class="form-control-file" accept="image/*">
+                                    <small class="text-muted">Upload a PNG/SVG/JPG once — it updates <strong>all logos at the same time</strong>: site header, footer, admin sidebar &amp; favicon. Leave empty to keep the current logo.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Website Font</label>
+                                    @php
+                                        $fontOptions = ['Inter','Poppins','Roboto','Montserrat','Open Sans','Lato','Nunito','Raleway','Rubik','Work Sans','Manrope','Mulish','DM Sans','Oswald'];
+                                    @endphp
+                                    <select name="site_font" class="form-control" id="siteFontSelect">
+                                        @foreach($fontOptions as $font)
+                                            <option value="{{ $font }}" {{ $settings['site_font'] == $font ? 'selected' : '' }}>{{ $font }}</option>
+                                        @endforeach
+                                    </select>
+                                    <small class="text-muted">Applied across the entire website (headings, body & buttons).</small>
+                                    <div class="mt-3 p-3 rounded" style="background:#f8f9fc;">
+                                        <span class="text-muted d-block mb-1"><small>Live preview</small></span>
+                                        <span id="fontPreview" style="font-size:1.4rem; font-weight:700;">The quick brown fox — MyFitness 123</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -122,13 +211,25 @@
                                     @endforeach
                                 </div>
                                 <small class="text-muted d-block mb-3">If you only add one slide, it will be a static background. Add multiple slides to enable the fading carousel.</small>
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Hero Headline Title</label>
-                                    <input type="text" name="hero_title" class="form-control" value="{{ $settings['hero_title'] }}">
+                                <div class="form-row">
+                                    <div class="col-md-9 form-group">
+                                        <label class="font-weight-bold">Hero Headline Title</label>
+                                        <input type="text" name="hero_title" class="form-control" value="{{ $settings['hero_title'] }}">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <label class="font-weight-bold">Title Color</label>
+                                        <input type="color" name="hero_title_color" class="form-control" value="{{ $settings['hero_title_color'] ?? '#1a1a2e' }}">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Hero Subtitle</label>
-                                    <textarea name="hero_subtitle" class="form-control" rows="2">{{ $settings['hero_subtitle'] }}</textarea>
+                                <div class="form-row">
+                                    <div class="col-md-9 form-group">
+                                        <label class="font-weight-bold">Hero Subtitle</label>
+                                        <textarea name="hero_subtitle" class="form-control" rows="2">{{ $settings['hero_subtitle'] }}</textarea>
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <label class="font-weight-bold">Subtitle Color</label>
+                                        <input type="color" name="hero_sub_color" class="form-control" value="{{ $settings['hero_sub_color'] ?? '#71717a' }}">
+                                    </div>
                                 </div>
                             </div>
 
@@ -178,6 +279,11 @@
 
                             <!-- Tab: Sections -->
                             <div class="tab-pane fade" id="sections" role="tabpanel" aria-labelledby="sections-tab">
+                                <div class="custom-control custom-switch mb-3 p-2 rounded" style="background:#fff8e1; padding-left:2.5rem !important;">
+                                    <input type="checkbox" class="custom-control-input" id="swAnnouncements" name="show_announcements" value="1" {{ $settings['show_announcements'] == '1' ? 'checked' : '' }}>
+                                    <label class="custom-control-label font-weight-bold" for="swAnnouncements"><i class="fas fa-bullhorn text-warning mr-1"></i>Announcement Bar (master switch)</label>
+                                    <small class="d-block text-muted">Turn OFF to hide the running announcement bar entirely, regardless of individual announcements.</small>
+                                </div>
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swHero" name="show_hero_video" value="1" {{ $settings['show_hero_video'] == '1' ? 'checked' : '' }}>
                                     <label class="custom-control-label font-weight-bold" for="swHero">Hero Workout Video Section</label>
@@ -189,6 +295,16 @@
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swWhyUs" name="show_why_us" value="1" {{ $settings['show_why_us'] == '1' ? 'checked' : '' }}>
                                     <label class="custom-control-label font-weight-bold" for="swWhyUs">Why Choose Us Feature Section</label>
+                                </div>
+                                <div class="custom-control custom-switch mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="swCoaches" name="show_coaches" value="1" {{ $settings['show_coaches'] == '1' ? 'checked' : '' }}>
+                                    <label class="custom-control-label font-weight-bold" for="swCoaches">Meet Our Coaches Section</label>
+                                </div>
+                                <div class="form-group pl-4 mb-4">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Coaches Section Heading</label>
+                                    <input type="text" name="coaches_heading" class="form-control form-control-sm mb-2" value="{{ $settings['coaches_heading'] }}">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Coaches Section Subheading</label>
+                                    <input type="text" name="coaches_subheading" class="form-control form-control-sm" value="{{ $settings['coaches_subheading'] }}">
                                 </div>
                                 <div class="custom-control custom-switch mb-3">
                                     <input type="checkbox" class="custom-control-input" id="swTestimonials" name="show_testimonials" value="1" {{ $settings['show_testimonials'] == '1' ? 'checked' : '' }}>
@@ -236,12 +352,37 @@
 
                                 <div class="form-group border p-3 rounded">
                                     <div class="custom-control custom-switch mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="swFacebook" name="show_facebook" value="1" {{ $settings['show_facebook'] == '1' ? 'checked' : '' }}>
+                                        <label class="custom-control-label font-weight-bold" for="swFacebook">Enable Facebook</label>
+                                    </div>
+                                    <input type="text" name="social_facebook" class="form-control" placeholder="Facebook Profile URL" value="{{ $settings['social_facebook'] }}">
+                                </div>
+
+                                <div class="form-group border p-3 rounded">
+                                    <div class="custom-control custom-switch mb-2">
                                         <input type="checkbox" class="custom-control-input" id="swWhatsapp" name="show_whatsapp" value="1" {{ $settings['show_whatsapp'] == '1' ? 'checked' : '' }}>
                                         <label class="custom-control-label font-weight-bold" for="swWhatsapp">Enable WhatsApp</label>
                                     </div>
                                     <input type="text" name="social_whatsapp" class="form-control" placeholder="WhatsApp Link (e.g. https://wa.me/971...)" value="{{ $settings['social_whatsapp'] }}">
                                 </div>
                             </div>
+
+                            <!-- Tab: Pages -->
+                            <div class="tab-pane fade" id="pages" role="tabpanel" aria-labelledby="pages-tab">
+                                <h6 class="font-weight-bold mb-3"><i class="fas fa-sign-in-alt mr-2"></i>Login Page Background</h6>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Background Image</label>
+                                    @if(!empty($settings['login_bg_image']))
+                                        <div class="mb-2 p-2 rounded text-center" style="background:#f8f9fc;">
+                                            <img src="{{ $settings['login_bg_image'] }}" alt="Login background" style="max-height:120px; width:auto; border-radius:8px;">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="login_bg_image" class="form-control-file" accept="image/*">
+                                    <small class="text-muted">Upload a background image for the login page. Leave empty to keep the current image. If no image is set, the default gradient background is used.</small>
+                                </div>
+                            </div>
+
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -331,6 +472,27 @@
                     });
                 }
             }
+        });
+
+        // Live font preview in the Branding tab
+        document.addEventListener('DOMContentLoaded', function () {
+            const fontSelect = document.getElementById('siteFontSelect');
+            const preview = document.getElementById('fontPreview');
+            if (!fontSelect || !preview) return;
+
+            const loaded = {};
+            function applyFont(name) {
+                if (!loaded[name]) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://fonts.googleapis.com/css2?family=' + name.replace(/ /g, '+') + ':wght@400;500;600;700&display=swap';
+                    document.head.appendChild(link);
+                    loaded[name] = true;
+                }
+                preview.style.fontFamily = "'" + name + "', sans-serif";
+            }
+            applyFont(fontSelect.value);
+            fontSelect.addEventListener('change', function () { applyFont(this.value); });
         });
     </script>
 </x-dashboard.main-layout>

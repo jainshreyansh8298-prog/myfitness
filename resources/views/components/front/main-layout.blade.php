@@ -10,8 +10,8 @@
 <x-front.preloader />
 
 <body class="premium-theme">
-    <x-front.moving-banner />
     <x-front.header />
+    <x-front.announcement-bar />
     
     {{ $slot }}
     

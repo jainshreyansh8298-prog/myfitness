@@ -15,15 +15,32 @@ class SiteSettingSeeder extends Seeder
     {
         $defaults = [
             'brand_name'            => 'My Fitness',
-            'primary_color'         => '#dfff00', // Cult.fit energetic neon yellow/lime
-            'secondary_color'       => '#00f2fe', // Electric cyan accent
-            'bg_color'              => '#0b0d14', // Sleek cult.fit dark mode
-            'text_color'            => '#ffffff',
+            'primary_color'         => '#4DBFAA', // Teal from company logo
+            'secondary_color'       => '#5ECC7E', // Green from company logo
+            'bg_color'              => '#ffffff', // Clean white background
+            'text_color'            => '#1a1a2e', // Dark text for readability
+            'button_text_color'     => '#ffffff', // White text on colored buttons
             
+            // New fine-grained controls
+            'card_color'            => '#f4f4f5',
+            'card_hover_color'      => '#e4e4e7',
+            'btn_bg_color'          => '#1a1a2e',
+            'btn_hover_color'       => '#4DBFAA',
+            'btn_hover_text_color'  => '#ffffff',
+            'testimonial_color'     => '#f4f4f5',
+            'hero_title_color'      => '#000000',
+            'hero_sub_color'        => '#333333',
+            'footer_icon_color'     => '#4DBFAA',
+            'stats_number_color'    => '#4DBFAA',
+
+            'preloader_color'       => '#10b981',
+            'preloader_text'        => '',
+            'site_font'             => 'Inter',
+
             // Hero Video Background
             'hero_video_url'        => 'https://assets.mixkit.co/videos/preview/mixkit-man-runs-on-a-treadmill-in-a-gym-41315-large.mp4',
-            'hero_title'            => 'ELEVATE YOUR FITNESS JOURNEY WITH EXPERT PERSONAL TRAINERS',
-            'hero_subtitle'         => 'Certified trainers at your home, gym, or pool across Dubai & UAE. Flexible scheduling, customized workout plans, and guaranteed transformation.',
+            'hero_title'            => 'FITNESS AT DOORSTEP',
+            'hero_subtitle'         => 'Experience fitness delivered to you - at your home or online!',
 
             // Moving Announcement Ticker
             'show_ticker'           => '1',
@@ -43,13 +60,34 @@ class SiteSettingSeeder extends Seeder
             'show_testimonials'     => '1',
             'show_blogs'            => '1',
             'show_faqs'             => '1',
+
+            // Coaches section
+            'show_coaches'          => '1',
+            'coaches_heading'       => 'Meet Our Coaches',
+            'coaches_subheading'    => 'Train with certified experts dedicated to your transformation.',
+
+            // Social links
+            'show_instagram'        => '0',
+            'social_instagram'      => '',
+            'show_twitter'          => '0',
+            'social_twitter'        => '',
+            'show_linkedin'         => '0',
+            'social_linkedin'       => '',
+            'show_facebook'         => '0',
+            'social_facebook'       => '',
+            'show_whatsapp'         => '1',
+            'social_whatsapp'       => 'https://wa.me/971585858348',
+
+            // Announcements
+            'show_announcements'    => '1',
         ];
 
         foreach ($defaults as $key => $val) {
-            SiteSetting::updateOrCreate(['key' => $key], ['value' => $val]);
+            SiteSetting::firstOrCreate(
+                ['key' => $key], ['value' => $val]);
         }
 
-        // Default Cult.fit style Testimonials
+        // Default Testimonials
         if (Testimonial::count() === 0) {
             Testimonial::create([
                 'name' => 'Sarah Al Mansoori',

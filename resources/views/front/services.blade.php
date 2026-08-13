@@ -2,9 +2,8 @@
     <section class="premium-section" style="padding-top: 120px;">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="hero-badge mb-3">DOORSTEP FITNESS SERVICES</span>
                 <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase;">
-                    FIND YOUR PERFECT <span class="text-gradient">FITNESS PROGRAM</span>
+                    FIND YOUR PERFECT <span style="color: var(--color-primary);">FITNESS PROGRAM</span>
                 </h1>
                 <p style="color: var(--color-text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
                     Book certified 1-on-1 personal trainers, private yoga coaches, swimming instructors, and sports massage therapists.

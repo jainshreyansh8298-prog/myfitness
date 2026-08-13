@@ -75,10 +75,12 @@
             <div class="col-lg-12 mt-5">
                 <div class="business-partner-banner">
                     <div class="banner-content">
-                        <h3>Be a business partner !</h3>
-                        <p>Join our growing network of fitness professionals.</p>
+                        <h3 style="font-size: 2rem; font-weight: 800; color: var(--brand-text); margin-bottom: 8px;">Start as Business Partner?</h3>
+                        <p style="color: var(--brand-text-muted); font-size: 1.1rem; margin: 0; max-width: 700px;">
+                            Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
+                        </p>
                     </div>
-                    <a href="/business-partner" class="modern-btn">Start as Business Partner? <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="/contact" class="modern-btn">Start as Business Partner? <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
@@ -159,9 +161,9 @@
 
 .modern-feature-card:hover {
     transform: translateY(-10px);
-    background: rgba(30, 41, 59, 0.8);
+    background: var(--color-surface-hover);
     border-color: var(--brand-primary);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px var(--color-shadow);
 }
 
 .modern-feature-card .card-glow {
@@ -288,8 +290,9 @@
 
 .modern-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
-    color: var(--brand-primary);
+    box-shadow: 0 15px 30px var(--color-shadow);
+    background: var(--color-btn-hover-bg);
+    color: var(--color-btn-hover-text);
 }
 
 @media (max-width: 768px) {

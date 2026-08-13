@@ -28,14 +28,44 @@ class SiteSettingController extends Controller
 
         // Checkboxes defaults for switches
         $switches = [
-            'hero_fade_effect', 'show_ticker', 'show_popup', 'show_hero_video', 
-            'show_services', 'show_why_us', 'show_pricing', 'show_testimonials', 
-            'show_blogs', 'show_faqs', 'show_instagram', 'show_twitter', 
+            'hero_fade_effect', 'show_announcements', 'show_ticker', 'show_popup', 'show_hero_video',
+            'show_services', 'show_why_us', 'show_pricing', 'show_testimonials',
+            'show_blogs', 'show_faqs', 'show_coaches', 'show_instagram', 'show_twitter',
             'show_linkedin', 'show_whatsapp'
         ];
         foreach ($switches as $sw) {
             if (!isset($data[$sw])) {
                 $data[$sw] = '0';
+            }
+        }
+
+        // Logo upload (Branding tab). Keep the existing logo if no new file is provided.
+        unset($data['site_logo']);
+        if ($request->hasFile('site_logo')) {
+            $file = $request->file('site_logo');
+            if ($file->isValid()) {
+                $oldLogo = SiteSetting::get('site_logo');
+                $path = $file->store('branding', 'public');
+                $data['site_logo'] = \Illuminate\Support\Facades\Storage::url($path);
+
+                if ($oldLogo && \Illuminate\Support\Str::startsWith($oldLogo, '/storage/')) {
+                    \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $oldLogo));
+                }
+            }
+        }
+
+        // Login background image upload (Pages tab).
+        unset($data['login_bg_image']);
+        if ($request->hasFile('login_bg_image')) {
+            $file = $request->file('login_bg_image');
+            if ($file->isValid()) {
+                $oldBg = SiteSetting::get('login_bg_image');
+                $path = $file->store('backgrounds', 'public');
+                $data['login_bg_image'] = \Illuminate\Support\Facades\Storage::url($path);
+
+                if ($oldBg && \Illuminate\Support\Str::startsWith($oldBg, '/storage/')) {
+                    \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $oldBg));
+                }
             }
         }
 

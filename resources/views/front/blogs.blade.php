@@ -2,9 +2,8 @@
     <section class="premium-section" style="padding-top: 120px;">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="hero-badge mb-2">EXPERT ARTICLES & TIPS</span>
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
-                    FITNESS & WORKOUT <span class="text-gradient">BLOG</span>
+                    FITNESS & WORKOUT <span style="color: var(--color-primary);">BLOG</span>
                 </h1>
                 <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
                     Latest tips on personal training, weight loss, posture correction, yoga benefits, and nutrition in Dubai.
