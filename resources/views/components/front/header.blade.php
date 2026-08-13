@@ -1,4 +1,4 @@
-<header class="premium-header glass-panel" style="backdrop-filter: blur(20px);">
+<header class="premium-header glass-panel" style="backdrop-filter: blur(20px); background: var(--color-bg);">
     <div class="container d-flex align-items-center justify-content-between py-3">
         <!-- Logo / Brand Name -->
         @php
