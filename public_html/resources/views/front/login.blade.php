@@ -19,7 +19,7 @@
                 <div class="col-lg-5 col-md-8">
                     <div class="text-center mb-4">
                         <h1 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase;">
-                            SIGN <span class="text-gradient">IN</span>
+                            SIGN <span style="color: var(--color-primary);">IN</span>
                         </h1>
                     </div>
 

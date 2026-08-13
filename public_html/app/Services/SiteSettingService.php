@@ -29,14 +29,27 @@ class SiteSettingService
             'bg_color'            => SiteSetting::get('bg_color', '#0b0d14'),
             'text_color'          => SiteSetting::get('text_color', '#fafafa'),
             'button_text_color'   => SiteSetting::get('button_text_color', '#000000'),
+            
+            // New fine-grained controls
+            'card_color'          => SiteSetting::get('card_color', '#f4f4f5'),
+            'card_hover_color'    => SiteSetting::get('card_hover_color', '#e4e4e7'),
+            'btn_bg_color'        => SiteSetting::get('btn_bg_color', '#1a1a2e'),
+            'btn_hover_color'     => SiteSetting::get('btn_hover_color', '#4DBFAA'),
+            'btn_hover_text_color'=> SiteSetting::get('btn_hover_text_color', '#ffffff'),
+            'testimonial_color'   => SiteSetting::get('testimonial_color', '#f4f4f5'),
+            'hero_title_color'    => SiteSetting::get('hero_title_color', '#1a1a2e'),
+            'hero_sub_color'      => SiteSetting::get('hero_sub_color', '#71717a'),
+            'footer_icon_color'   => SiteSetting::get('footer_icon_color', '#4DBFAA'),
+            'stats_number_color'  => SiteSetting::get('stats_number_color', '#4DBFAA'),
+            
             'preloader_color'     => SiteSetting::get('preloader_color', '#10b981'),
-            'preloader_text'      => SiteSetting::get('preloader_text', 'myfitness.ae'),
+            'preloader_text'      => SiteSetting::get('preloader_text', ''),
             
             'hero_slides'         => json_decode($heroSlidesRaw, true),
             'hero_fade_effect'    => SiteSetting::get('hero_fade_effect', '1'),
             
-            'hero_title'          => SiteSetting::get('hero_title', 'ELEVATE YOUR FITNESS JOURNEY WITH EXPERT PERSONAL TRAINERS'),
-            'hero_subtitle'       => SiteSetting::get('hero_subtitle', 'Certified trainers at your home, gym, or pool across Dubai & UAE. Flexible scheduling & guaranteed transformation.'),
+            'hero_title'          => SiteSetting::get('hero_title', 'FITNESS AT DOORSTEP'),
+            'hero_subtitle'       => SiteSetting::get('hero_subtitle', 'Experience fitness delivered to you - at your home or online!'),
 
             'show_announcements'  => SiteSetting::get('show_announcements', '1'),
 

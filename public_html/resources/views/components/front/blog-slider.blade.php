@@ -38,7 +38,7 @@
                                             href="{{ route('front.blogDetails',$blog->slug) }}">
                                             {{ $blog->title }}</a> </h4>
                                     <p class="common-para">
-                                    <p>{{ $blog->excerpt }}</p>
+                                    <p>{{ Str::limit(strip_tags($blog->excerpt ?: $blog->content), 120) }}</p>
                                 </div>
                             </div>
                         </div>                  

@@ -17,7 +17,7 @@
                         <span class="cult-category-badge mb-3" style="position: static;">{{ $blog->category->name }}</span>
                     @endif
 
-                    <h1 style="font-size: 2.6rem; font-weight: 900; color: #fff; margin-top: 10px; margin-bottom: 16px; line-height: 1.25;">
+                    <h1 style="font-size: 2.6rem; font-weight: 900; color: var(--brand-text); margin-top: 10px; margin-bottom: 16px; line-height: 1.25;">
                         {{ $blog->title }}
                     </h1>
 
@@ -31,15 +31,15 @@
                         <img src="{{ $imgUrl }}" alt="{{ $blog->title }}" style="width: 100%; max-height: 480px; object-fit: cover;" onError="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800'">
                     </div>
 
-                    <div style="background: var(--brand-card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px; color: #e2e8f0; font-size: 1.05rem; line-height: 1.8;">
-                        {!! nl2br(e($blog->content)) !!}
+                    <div style="background: var(--brand-card-bg); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px; color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.8;">
+                        {!! $blog->content !!}
                     </div>
 
                     <!-- CTA Box -->
-                    <div style="background: linear-gradient(135deg, #141722 0%, #0b0d14 100%); border: 2px solid var(--brand-primary); border-radius: 16px; padding: 30px; margin-top: 40px; text-align: center;">
-                        <h3 style="color: #fff; font-weight: 800; font-size: 1.5rem; margin-bottom: 10px;">READY TO ELEVATE YOUR FITNESS?</h3>
-                        <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto 20px;">Book a certified personal trainer to deliver custom workouts directly to your doorstep.</p>
-                        <a href="{{ route('front.services') }}" class="btn-cult-primary">EXPLORE FITNESS SERVICES</a>
+                    <div style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: 16px; padding: 30px; margin-top: 40px; text-align: center;">
+                        <h3 style="color: var(--brand-text); font-weight: 800; font-size: 1.5rem; margin-bottom: 10px;">READY TO ELEVATE YOUR FITNESS?</h3>
+                        <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 20px;">Book a certified personal trainer to deliver custom workouts directly to your doorstep.</p>
+                        <a href="{{ route('front.services') }}" class="btn-cult-primary" style="background: var(--color-btn-bg); color: var(--brand-button-text);">EXPLORE FITNESS SERVICES</a>
                     </div>
                 </div>
             </div>

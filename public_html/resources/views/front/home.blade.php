@@ -17,7 +17,7 @@
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
                 <div class="mb-4 mb-md-0">
                     <span class="text-gradient" style="font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">OUR PROGRAMS & SERVICES</span>
-                    <h2 style="font-size: 3rem; font-weight: 900; margin-top: 8px;">EXPLORE FITNESS SERVICES</h2>
+                    <h2 style="font-size: 3rem; font-weight: 900; margin-top: 8px; color: var(--brand-text);">EXPLORE FITNESS SERVICES</h2>
                 </div>
                 <div>
                     <a class="btn-premium btn-outline" href="{{ route('front.services') }}">

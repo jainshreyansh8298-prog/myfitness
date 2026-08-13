@@ -3,7 +3,7 @@
         <!-- Top Footer (Newsletter / CTA) -->
         <div class="row mb-5 pb-5 border-bottom" style="border-color: var(--color-border) !important;">
             <div class="col-lg-6 mb-4 mb-lg-0 pe-lg-5">
-                <h3 class="fw-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.03em; color: var(--color-text);">Join the <span class="text-gradient">Elite</span> Inner Circle.</h3>
+                <h3 class="fw-bold mb-3" style="font-size: 2.2rem; letter-spacing: -0.03em; color: var(--brand-text);">Join the Elite Inner Circle.</h3>
                 <p class="text-muted mb-0" style="font-size: 1.1rem; line-height: 1.6;">Subscribe for exclusive training tips, nutrition guides, and VIP offers delivered straight to your inbox.</p>
             </div>
             <div class="col-lg-6 d-flex align-items-center">
@@ -24,7 +24,7 @@
                         <img src="{{ $footerLogo }}" alt="{{ \App\Models\SiteSetting::get('brand_name', 'MyFitness') }} Logo" style="height: 60px; width: auto; object-fit: contain;">
                     @else
                         <div class="footer-brand m-0" style="font-size: 2.5rem;">
-                            <span style="color: var(--color-text);">MY</span><span class="text-gradient">FITNESS</span>
+                            <span style="color: var(--color-text);">MY</span><span style="color: var(--color-primary);">FITNESS</span>
                         </div>
                     @endif
                 </a>
@@ -34,19 +34,19 @@
                 <div class="d-flex flex-column gap-3 mb-4">
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
-                            <i class="fas fa-map-marker-alt text-gradient"></i>
+                            <i class="fas fa-map-marker-alt" style="color: var(--color-footer-icon);"></i>
                         </div>
                         <span style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.4;">Dubai, UAE</span>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
-                            <i class="fas fa-phone-alt text-gradient"></i>
+                            <i class="fas fa-phone-alt" style="color: var(--color-footer-icon);"></i>
                         </div>
                         <a href="tel:+971585858348" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">+971 5858 58348</a>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
-                            <i class="fas fa-envelope text-gradient"></i>
+                            <i class="fas fa-envelope" style="color: var(--color-footer-icon);"></i>
                         </div>
                         <a href="mailto:info@myfitness.ae" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">info@myfitness.ae</a>
                     </div>

@@ -9,7 +9,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div class="text-center mb-5">
                         <h1 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase;">
-                            CREATE AN <span class="text-gradient">ACCOUNT</span>
+                            CREATE AN <span style="color: var(--color-primary);">ACCOUNT</span>
                         </h1>
                     </div>
 

@@ -12,8 +12,9 @@
     <div class="container mt-4 mb-4">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
             <div class="mb-3 mb-md-0">
-                <h2 style="font-size: 2.5rem; font-weight: 800; color: #fff; letter-spacing: -0.5px;">TRAINER-LED GROUP CLASSES</h2>
-                <p style="font-size: 1.1rem; color: #aaa; margin-top: 5px;">Fun, engaging and result-oriented workouts</p>
+                <span style="color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem;">SPECIALIZED COACHING</span>
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--brand-text); letter-spacing: -0.5px;">TRAINER-LED GROUP CLASSES</h2>
+                <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; margin: 15px auto 0; max-width: 600px;">Fun, engaging and result-oriented workouts</p>
             </div>
             <div>
                 <a class="btn-premium btn-outline-light" href="{{ route('front.services') }}" style="border-radius: 30px; font-weight: 600; padding: 10px 24px;">

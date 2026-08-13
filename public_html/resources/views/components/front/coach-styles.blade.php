@@ -4,8 +4,8 @@
         height: 100%;
     }
     .coaches-section .coach-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
         border-radius: 16px;
         overflow: hidden;
         height: 100%;
@@ -19,7 +19,7 @@
         width: 100%;
         height: 200px;
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--color-surface);
     }
     @media (max-width: 576px) {
         .coaches-section .coach-photo-wrap { height: 220px; }
@@ -41,6 +41,7 @@
         font-size: 1.05rem;
         font-weight: 800;
         margin: 0;
+        color: var(--brand-text);
     }
     .coaches-section .coach-title {
         color: var(--brand-primary, #dfff00);
@@ -52,7 +53,7 @@
     }
     .coaches-section .coach-bio {
         font-size: 0.82rem;
-        opacity: 0.7;
+        color: var(--color-text-muted);
         margin-top: 8px;
     }
     .coaches-section .coach-socials {
@@ -62,7 +63,7 @@
         margin-top: 12px;
     }
     .coaches-section .coach-socials a {
-        color: var(--color-text, #fafafa);
+        color: var(--brand-text);
         font-size: 0.95rem;
         transition: color 0.2s ease;
     }

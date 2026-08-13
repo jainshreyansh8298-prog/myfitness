@@ -78,6 +78,53 @@
                                     <label class="font-weight-bold">Button Text Color</label>
                                     <input type="color" name="button_text_color" class="form-control" value="{{ $settings['button_text_color'] }}">
                                 </div>
+                                <div class="form-group border-top pt-3 mt-3">
+                                    <h6 class="font-weight-bold text-primary mb-3">Element Specific Colors</h6>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Card Background Color</label>
+                                        <input type="color" name="card_color" class="form-control" value="{{ $settings['card_color'] ?? '#f4f4f5' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Card Hover Background</label>
+                                        <input type="color" name="card_hover_color" class="form-control" value="{{ $settings['card_hover_color'] ?? '#e4e4e7' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Background (Normal)</label>
+                                        <input type="color" name="btn_bg_color" class="form-control" value="{{ $settings['btn_bg_color'] ?? '#1a1a2e' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Hover Background</label>
+                                        <input type="color" name="btn_hover_color" class="form-control" value="{{ $settings['btn_hover_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Button Hover Text</label>
+                                        <input type="color" name="btn_hover_text_color" class="form-control" value="{{ $settings['btn_hover_text_color'] ?? '#ffffff' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Footer Icon Color</label>
+                                        <input type="color" name="footer_icon_color" class="form-control" value="{{ $settings['footer_icon_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Stats Number Color (e.g. 5,000+)</label>
+                                        <input type="color" name="stats_number_color" class="form-control" value="{{ $settings['stats_number_color'] ?? '#4DBFAA' }}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="font-weight-bold">Testimonial Card Background</label>
+                                        <input type="color" name="testimonial_color" class="form-control" value="{{ $settings['testimonial_color'] ?? '#f4f4f5' }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group border-top pt-3 mt-3">
+                                    <h6 class="font-weight-bold text-primary mb-3">Preloader Settings</h6>
+                                </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Preloader Icon Color</label>
                                     <input type="color" name="preloader_color" class="form-control" value="{{ $settings['preloader_color'] }}">
@@ -164,13 +211,25 @@
                                     @endforeach
                                 </div>
                                 <small class="text-muted d-block mb-3">If you only add one slide, it will be a static background. Add multiple slides to enable the fading carousel.</small>
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Hero Headline Title</label>
-                                    <input type="text" name="hero_title" class="form-control" value="{{ $settings['hero_title'] }}">
+                                <div class="form-row">
+                                    <div class="col-md-9 form-group">
+                                        <label class="font-weight-bold">Hero Headline Title</label>
+                                        <input type="text" name="hero_title" class="form-control" value="{{ $settings['hero_title'] }}">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <label class="font-weight-bold">Title Color</label>
+                                        <input type="color" name="hero_title_color" class="form-control" value="{{ $settings['hero_title_color'] ?? '#1a1a2e' }}">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Hero Subtitle</label>
-                                    <textarea name="hero_subtitle" class="form-control" rows="2">{{ $settings['hero_subtitle'] }}</textarea>
+                                <div class="form-row">
+                                    <div class="col-md-9 form-group">
+                                        <label class="font-weight-bold">Hero Subtitle</label>
+                                        <textarea name="hero_subtitle" class="form-control" rows="2">{{ $settings['hero_subtitle'] }}</textarea>
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <label class="font-weight-bold">Subtitle Color</label>
+                                        <input type="color" name="hero_sub_color" class="form-control" value="{{ $settings['hero_sub_color'] ?? '#71717a' }}">
+                                    </div>
                                 </div>
                             </div>
 

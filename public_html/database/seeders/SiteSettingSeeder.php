@@ -20,14 +20,27 @@ class SiteSettingSeeder extends Seeder
             'bg_color'              => '#ffffff', // Clean white background
             'text_color'            => '#1a1a2e', // Dark text for readability
             'button_text_color'     => '#ffffff', // White text on colored buttons
-            'preloader_color'       => '#4DBFAA',
-            'preloader_text'        => 'myfitness.ae',
+            
+            // New fine-grained controls
+            'card_color'            => '#f4f4f5',
+            'card_hover_color'      => '#e4e4e7',
+            'btn_bg_color'          => '#1a1a2e',
+            'btn_hover_color'       => '#4DBFAA',
+            'btn_hover_text_color'  => '#ffffff',
+            'testimonial_color'     => '#f4f4f5',
+            'hero_title_color'      => '#000000',
+            'hero_sub_color'        => '#333333',
+            'footer_icon_color'     => '#4DBFAA',
+            'stats_number_color'    => '#4DBFAA',
+
+            'preloader_color'       => '#10b981',
+            'preloader_text'        => '',
             'site_font'             => 'Inter',
 
             // Hero Video Background
             'hero_video_url'        => 'https://assets.mixkit.co/videos/preview/mixkit-man-runs-on-a-treadmill-in-a-gym-41315-large.mp4',
-            'hero_title'            => 'ELEVATE YOUR FITNESS JOURNEY WITH EXPERT PERSONAL TRAINERS',
-            'hero_subtitle'         => 'Certified trainers at your home, gym, or pool across Dubai & UAE. Flexible scheduling, customized workout plans, and guaranteed transformation.',
+            'hero_title'            => 'FITNESS AT DOORSTEP',
+            'hero_subtitle'         => 'Experience fitness delivered to you - at your home or online!',
 
             // Moving Announcement Ticker
             'show_ticker'           => '1',
@@ -70,7 +83,8 @@ class SiteSettingSeeder extends Seeder
         ];
 
         foreach ($defaults as $key => $val) {
-            SiteSetting::updateOrCreate(['key' => $key], ['value' => $val]);
+            SiteSetting::firstOrCreate(
+                ['key' => $key], ['value' => $val]);
         }
 
         // Default Testimonials

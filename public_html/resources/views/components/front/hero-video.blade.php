@@ -25,10 +25,10 @@
     <!-- Hero Content -->
     <div class="premium-hero-content">
         <h1 class="hero-title">
-            {!! str_replace(['PERSONAL TRAINERS', 'FITNESS JOURNEY'], ['<span class="text-gradient">PERSONAL TRAINERS</span>', '<span class="text-gradient">FITNESS JOURNEY</span>'], $heroTitle) !!}
+            {!! str_replace(['PERSONAL TRAINERS', 'FITNESS JOURNEY'], ['<span style="color: var(--color-primary);">PERSONAL TRAINERS</span>', '<span style="color: var(--color-primary);">FITNESS JOURNEY</span>'], $heroTitle) !!}
         </h1>
 
-        <p class="hero-subtitle">
+        <p class="hero-subtitle mb-4">
             {{ $heroSubtitle }}
         </p>
 

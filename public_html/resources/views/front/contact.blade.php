@@ -3,7 +3,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
-                    BECOME A <span class="text-gradient">PARTNER</span>
+                    BECOME A <span style="color: var(--color-primary);">PARTNER</span>
                 </h1>
                 <p style="color: var(--color-text-muted); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
                     Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
@@ -14,7 +14,7 @@
                 <!-- Left: Contact Form -->
                 <div class="col-lg-7">
                     <div class="glass-panel" style="border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                        <h3 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 30px;">SEND US A <span class="text-gradient">MESSAGE</span></h3>
+                        <h3 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 30px;">SEND US A <span style="color: var(--color-primary);">MESSAGE</span></h3>
 
                         <form action="{{ route('form.store') }}" method="POST">
                             @csrf

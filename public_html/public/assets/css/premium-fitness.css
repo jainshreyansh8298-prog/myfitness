@@ -2,15 +2,6 @@
 
 :root {
   --color-bg: var(--brand-bg, #ffffff);
-  --color-surface: color-mix(in srgb, var(--color-bg) 92%, var(--color-text) 8%);
-  --color-surface-hover: color-mix(in srgb, var(--color-bg) 85%, var(--color-text) 15%);
-  --color-border: color-mix(in srgb, var(--color-text) 10%, transparent);
-  --color-primary: var(--brand-primary, #4DBFAA);
-  --color-primary-glow: color-mix(in srgb, var(--color-primary) 20%, transparent);
-  --color-secondary: var(--brand-secondary, #5ECC7E);
-  --color-accent: var(--brand-primary, #4DBFAA);
-  --color-text: var(--brand-text, #1a1a2e);
-  --color-text-muted: color-mix(in srgb, var(--color-text) 55%, var(--color-bg) 45%);
   
   --font-main: 'Outfit', sans-serif;
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,11 +45,11 @@ a {
 
 /* Utilities */
 .glass-panel {
-  background: color-mix(in srgb, var(--color-bg) 94%, var(--color-text) 6%);
+  background: var(--color-surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-text) 6%, transparent);
+  box-shadow: 0 4px 24px var(--color-shadow);
 }
 
 .text-gradient {
@@ -89,21 +80,22 @@ a {
 }
 
 .btn-primary {
-  background: var(--color-text);
-  color: var(--color-bg);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-text) 10%, transparent);
+  background: var(--color-btn-bg);
+  color: var(--brand-button-text);
+  box-shadow: 0 4px 14px var(--color-shadow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-text) 15%, transparent);
-  background: var(--color-text);
-  color: var(--color-bg);
+  box-shadow: 0 6px 20px var(--color-shadow);
+  background: var(--color-btn-hover-bg);
+  color: var(--color-btn-hover-text);
+  border-color: var(--color-btn-hover-bg);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--brand-button-text, #fff);
+  background: var(--color-btn-bg);
+  color: var(--brand-button-text);
   box-shadow: 0 8px 24px var(--color-primary-glow);
 }
 
@@ -199,7 +191,7 @@ a {
 
 /* Footer */
 .premium-footer {
-  background: color-mix(in srgb, var(--color-bg) 95%, var(--color-text) 5%);
+  background: var(--color-surface);
   border-top: 1px solid var(--color-border);
   padding: 80px 0 40px;
 }
@@ -344,24 +336,25 @@ a {
   font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 24px;
+  color: var(--color-hero-title);
   text-transform: uppercase;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: var(--color-text-muted);
+  color: var(--color-hero-subtitle);
   max-width: 700px;
   margin: 0 auto 40px;
 }
 
 /* --- Search Card --- */
 .premium-search-card {
-  background: color-mix(in srgb, var(--color-bg) 92%, var(--color-text) 8%);
+  background: var(--color-surface);
   backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-text) 8%, transparent);
+  box-shadow: 0 20px 40px var(--color-shadow);
   position: relative;
   z-index: 20;
 }
@@ -378,8 +371,8 @@ a {
 }
 
 .premium-search-card select:focus {
-  border-color: var(--color-primary) !important;
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent) !important;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 2px var(--color-primary-glow) !important;
   outline: none;
 }
 
@@ -437,7 +430,7 @@ a {
 .category-badge {
   position: absolute;
   bottom: 16px; left: 16px;
-  background: color-mix(in srgb, var(--color-bg) 85%, var(--color-text) 15%);
+  background: var(--color-surface);
   backdrop-filter: blur(8px);
   color: var(--color-text);
   border: 1px solid var(--color-border);
@@ -509,7 +502,7 @@ a {
 .discount-modal-backdrop {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  background: var(--color-shadow);
   backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
@@ -536,7 +529,7 @@ a {
   text-align: center;
   transform: scale(0.95) translateY(20px);
   transition: var(--transition-smooth);
-  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--color-text) 15%, transparent);
+  box-shadow: 0 25px 50px -12px var(--color-shadow);
 }
 
 .discount-modal-backdrop.active .discount-modal-card {
@@ -642,18 +635,18 @@ body.premium-theme .nice-select .option.selected.focus {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: color-mix(in srgb, var(--color-text) 5%, var(--color-bg));
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   transition: var(--transition-smooth);
   text-decoration: none;
 }
 .social-icon-modern:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
   color: var(--color-bg);
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  box-shadow: 0 10px 20px var(--color-primary-glow);
 }
 .icon-box-modern {
   display: flex;
@@ -662,7 +655,7 @@ body.premium-theme .nice-select .option.selected.focus {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: color-mix(in srgb, var(--color-text) 5%, var(--color-bg));
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   flex-shrink: 0;
 }
@@ -726,3 +719,4 @@ body.premium-theme .nice-select .option.selected.focus {
   }
 }
 
+.slick-dots li button:before { color: var(--brand-primary) !important; opacity: 0.4 !important; font-size: 10px !important; } .slick-dots li.slick-active button:before { color: var(--brand-primary) !important; opacity: 1 !important; transform: scale(1.4); transition: transform 0.3s ease; }
