@@ -12,7 +12,7 @@
 
             <div class="row g-5 align-items-center mb-5">
                 <div class="col-lg-6">
-                    <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border); position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <div style="border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border); position: relative; box-shadow: 0 20px 40px var(--color-shadow);">
                         <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(180deg, rgba(9,9,11,0) 50%, rgba(9,9,11,0.8) 100%); z-index: 1;"></div>
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="About MyFitness" style="width: 100%; height: 500px; object-fit: cover; position: relative; z-index: 0;">
                     </div>

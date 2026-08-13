@@ -74,6 +74,10 @@
             --brand-bg: {{ $bgColor }} !important;
             --brand-text: {{ $textColor }} !important;
             --brand-button-text: {{ $btnTextColor }} !important;
+            --brand-text-muted: {{ $mutedColor }};
+            --brand-card-bg: {{ $cardColor }};
+            --brand-card-border: {{ $borderColor }};
+            --brand-danger: #ef4444;
             --brand-font: '{{ $siteFont }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
             /* Core theme bridges: map the admin color settings onto the --color-* vars the stylesheet actually consumes */
