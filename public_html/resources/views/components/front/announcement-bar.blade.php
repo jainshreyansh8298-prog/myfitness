@@ -31,14 +31,14 @@
 <style>
     .announcement-bar {
         position: fixed;
-        top: 0;
         left: 0;
         right: 0;
         overflow: hidden;
         background: var(--brand-primary, #dfff00);
         color: var(--brand-button-text, #0b0d14);
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        z-index: 1200; /* above the fixed header (z-index 1000) */
+        z-index: 1001;
+        transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .announcement-track {
         display: flex;
@@ -80,20 +80,52 @@
 
 <script>
     (function () {
-        // Push the fixed header and page content down by the announcement bar's
-        // height so the bar never overlaps the navigation (works at any width).
-        function fitAnnouncementBar() {
+        function positionAnnouncement() {
             var bar = document.getElementById('announcementBar');
-            if (!bar) return;
-            var h = bar.offsetHeight;
             var header = document.querySelector('.premium-header');
-            if (header) header.style.top = h + 'px';
-            document.body.style.paddingTop = h + 'px';
+            if (!bar || !header) return;
+
+            var headerH = header.offsetHeight;
+            var barH = bar.offsetHeight;
+
+            // Place announcement bar right below the fixed header
+            bar.style.top = headerH + 'px';
+
+            // Push body content down to account for both fixed header + announcement bar
+            document.body.style.paddingTop = (headerH + barH) + 'px';
         }
-        window.addEventListener('load', fitAnnouncementBar);
-        window.addEventListener('resize', fitAnnouncementBar);
-        document.addEventListener('DOMContentLoaded', fitAnnouncementBar);
-        fitAnnouncementBar();
+
+        var lastScroll = 0;
+
+        function handleScroll() {
+            var bar = document.getElementById('announcementBar');
+            var header = document.querySelector('.premium-header');
+            if (!bar || !header) return;
+
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var headerH = header.offsetHeight;
+            var barH = bar.offsetHeight;
+
+            if (currentScroll > headerH) {
+                // Scrolled past header — hide navbar, announcement sticks to top
+                header.style.transform = 'translateY(-100%)';
+                bar.style.top = '0px';
+                document.body.style.paddingTop = (headerH + barH) + 'px';
+            } else {
+                // Near top — show both navbar and announcement below it
+                header.style.transform = 'translateY(0)';
+                bar.style.top = headerH + 'px';
+                document.body.style.paddingTop = (headerH + barH) + 'px';
+            }
+
+            lastScroll = currentScroll;
+        }
+
+        window.addEventListener('load', positionAnnouncement);
+        window.addEventListener('resize', positionAnnouncement);
+        document.addEventListener('DOMContentLoaded', positionAnnouncement);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        positionAnnouncement();
     })();
 </script>
 @endif

@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
             SiteSettingSeeder::class,
             FaqSeeder::class,
             AreaSeeder::class,
+            CoachSeeder::class,
+            AnnouncementSeeder::class,
         ]);
     }
 }
