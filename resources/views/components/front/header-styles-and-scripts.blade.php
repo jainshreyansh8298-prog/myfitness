@@ -75,7 +75,13 @@
             --brand-text: {{ $textColor }} !important;
             --brand-button-text: {{ $btnTextColor }} !important;
             --brand-font: '{{ $siteFont }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            
+
+            /* Core theme bridges: map the admin color settings onto the --color-* vars the stylesheet actually consumes */
+            --color-primary: {{ $primaryColor }};
+            --color-secondary: {{ $secondaryColor }};
+            --color-bg: {{ $bgColor }};
+            --color-text: {{ $textColor }};
+
             --color-surface: {{ $cardColor }};
             --color-surface-hover: {{ $cardHoverColor }};
             --color-border: {{ $borderColor }};

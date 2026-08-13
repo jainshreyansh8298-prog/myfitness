@@ -4,6 +4,8 @@
 @php
     $heroVideoBrightness = \App\Models\SiteSetting::get('hero_video_brightness', '0.8');
     $heroOverlayOpacity = \App\Models\SiteSetting::get('hero_overlay_opacity', '0.6');
+    $heroTitleColor = \App\Models\SiteSetting::get('hero_title_color', '#000000');
+    $heroSubColor = \App\Models\SiteSetting::get('hero_sub_color', '#333333');
 @endphp
     <div class="hero-carousel premium-hero-bg hero-carousel-wrapper" data-fade="{{ $heroFadeEffect == '1' ? 'true' : 'false' }}" style="opacity: {{ $heroVideoBrightness }};">
         @foreach($heroSlides as $slide)
@@ -24,11 +26,11 @@
 
     <!-- Hero Content -->
     <div class="premium-hero-content">
-        <h1 class="hero-title">
+        <h1 class="hero-title" style="color: {{ $heroTitleColor }};">
             {!! str_replace(['PERSONAL TRAINERS', 'FITNESS JOURNEY'], ['<span style="color: var(--color-primary);">PERSONAL TRAINERS</span>', '<span style="color: var(--color-primary);">FITNESS JOURNEY</span>'], $heroTitle) !!}
         </h1>
 
-        <p class="hero-subtitle mb-4">
+        <p class="hero-subtitle mb-4" style="color: {{ $heroSubColor }};">
             {{ $heroSubtitle }}
         </p>
 
