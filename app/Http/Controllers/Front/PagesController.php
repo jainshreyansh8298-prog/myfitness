@@ -34,6 +34,17 @@ class PagesController extends Controller
         return view('front.about',compact('categories'));
     }
 
+    public function coaches()
+    {
+        $coaches = \Illuminate\Support\Facades\Schema::hasTable('coaches')
+            ? \App\Models\Coach::where('is_active', true)
+                ->orderBy('sort_order', 'asc')
+                ->latest()
+                ->get()
+            : collect();
+        return view('front.coaches', compact('coaches'));
+    }
+
     public function contact()
     {
         return view('front.contact');

@@ -5,7 +5,8 @@
         style="margin-top: 30px;margin-bottom:20px">
         <div class="mx-3 sidebar-brand-text ttn d-flex align-items-center justify-content-center">
             <div class="center d-flex align-items-center justify-content-center">
-                <img width="90%" class="py-2 my-2" src="{{ asset(config('app.logo')) }}" alt="">
+                @php $adminLogo = \App\Models\SiteSetting::get('site_logo', ''); @endphp
+                <img width="90%" class="py-2 my-2" src="{{ $adminLogo ?: asset(config('app.logo')) }}" alt="Logo">
             </div>
             <!-- <div class="right">
                {{ env('APP_NAME') }}
@@ -38,6 +39,22 @@
         <a class="nav-link" href="{{ route('admins.testimonials.index') }}">
             <i class="fas fa-star text-info"></i>
             <span> {{ __('Testimonials') }} </span>
+        </a>
+    </li>
+
+    <!-- Announcements -->
+    <li class="nav-item {{ Route::is('admins.announcements.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admins.announcements.index') }}">
+            <i class="fas fa-bullhorn text-warning"></i>
+            <span> {{ __('Announcements') }} </span>
+        </a>
+    </li>
+
+    <!-- Coaches -->
+    <li class="nav-item {{ Route::is('admins.coaches.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admins.coaches.index') }}">
+            <i class="fas fa-user-tie text-info"></i>
+            <span> {{ __('Coaches') }} </span>
         </a>
     </li>
 
