@@ -7,7 +7,7 @@
     <section class="premium-section coaches-section" style="padding-top: 160px;">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="text-gradient" style="font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">OUR TEAM</span>
+                <span style="color: var(--color-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">OUR TEAM</span>
                 <h1 style="font-size: 3.2rem; font-weight: 900; margin-top: 8px;">{{ $coachesHeading }}</h1>
                 <p style="max-width: 640px; margin: 12px auto 0; opacity: 0.75;">{{ $coachesSubheading }}</p>
             </div>

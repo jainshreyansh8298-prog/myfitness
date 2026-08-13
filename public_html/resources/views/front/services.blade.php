@@ -77,9 +77,9 @@
                                 </p>
 
                                 <div class="d-flex align-items-center gap-2 mb-3" style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 500;">
-                                    <span><i class="far fa-clock text-gradient me-1"></i> {{ $service->session_minutes ?? 60 }} Min Session</span>
+                                    <span><i class="far fa-clock me-1" style="color: var(--color-primary);"></i> {{ $service->session_minutes ?? 60 }} Min Session</span>
                                     <span>•</span>
-                                    <span><i class="fas fa-check-circle text-gradient me-1"></i> Doorstep</span>
+                                    <span><i class="fas fa-check-circle me-1" style="color: var(--color-primary);"></i> Doorstep</span>
                                 </div>
 
                                 <div class="price-row">

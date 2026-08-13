@@ -69,7 +69,7 @@
                             </button>
 
                             <div class="text-center mt-4">
-                                <span style="color: var(--color-text-muted); font-size: 0.95rem;">New to MyFitness? <a href="{{ route('front.register') }}" class="text-gradient" style="font-weight: 800; text-decoration: none; margin-left: 4px;">Create an Account</a></span>
+                                <span style="color: var(--color-text-muted); font-size: 0.95rem;">New to MyFitness? <a href="{{ route('front.register') }}" style="color: var(--color-primary); font-weight: 800; text-decoration: none; margin-left: 4px;">Create an Account</a></span>
                             </div>
                         </form>
                     </div>

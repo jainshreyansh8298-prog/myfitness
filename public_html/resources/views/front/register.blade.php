@@ -94,7 +94,7 @@
                             </button>
 
                             <div class="text-center">
-                                <span style="color: var(--color-text-muted); font-size: 0.95rem;">Already have an account? <a href="{{ route('front.login') }}" class="text-gradient" style="font-weight: 800; text-decoration: none; margin-left: 4px;">Sign In here</a></span>
+                                <span style="color: var(--color-text-muted); font-size: 0.95rem;">Already have an account? <a href="{{ route('front.login') }}" style="color: var(--color-primary); font-weight: 800; text-decoration: none; margin-left: 4px;">Sign In here</a></span>
                             </div>
                         </form>
                     </div>
