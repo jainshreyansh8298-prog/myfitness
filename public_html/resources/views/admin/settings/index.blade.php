@@ -46,7 +46,7 @@
                                 <a class="nav-link" id="sections-tab" data-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false">Sections</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="socials-tab" data-toggle="tab" href="#socials" role="tab" aria-controls="socials" aria-selected="false">Socials</a>
+                                <a class="nav-link" id="socials-tab" data-toggle="tab" href="#socials" role="tab" aria-controls="socials" aria-selected="false">Socials & Contact</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="pages-tab" data-toggle="tab" href="#pages" role="tab" aria-controls="pages" aria-selected="false">Pages</a>
@@ -364,6 +364,18 @@
                                         <label class="custom-control-label font-weight-bold" for="swWhatsapp">Enable WhatsApp</label>
                                     </div>
                                     <input type="text" name="social_whatsapp" class="form-control" placeholder="WhatsApp Link (e.g. https://wa.me/971...)" value="{{ $settings['social_whatsapp'] }}">
+                                </div>
+
+                                <h6 class="font-weight-bold mb-3 mt-4"><i class="fas fa-address-book mr-2"></i>Contact Information</h6>
+                                <div class="form-group border p-3 rounded">
+                                    <label class="font-weight-bold">Contact Address</label>
+                                    <input type="text" name="contact_address" class="form-control mb-3" placeholder="e.g. Dubai, UAE" value="{{ $settings['contact_address'] ?? 'Dubai, UAE' }}">
+                                    
+                                    <label class="font-weight-bold">Contact Phone / WhatsApp Number</label>
+                                    <input type="text" name="contact_phone" class="form-control mb-3" placeholder="e.g. +971 5858 58348" value="{{ $settings['contact_phone'] ?? '+971 5858 58348' }}">
+                                    
+                                    <label class="font-weight-bold">Contact Email</label>
+                                    <input type="email" name="contact_email" class="form-control" placeholder="e.g. info@myfitness.ae" value="{{ $settings['contact_email'] ?? 'info@myfitness.ae' }}">
                                 </div>
                             </div>
 

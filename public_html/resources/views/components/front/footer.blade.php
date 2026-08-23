@@ -29,6 +29,9 @@
                     @endif
                 </a>
 
+                @php
+                    $settings = app(\App\Services\SiteSettingService::class)->getAllSettings();
+                @endphp
 
                 <h5 class="footer-heading text-uppercase tracking-wider mb-3" style="color: var(--color-text); font-size: 0.95rem;">Reach Us</h5>
                 <div class="d-flex flex-column gap-3 mb-4">
@@ -36,25 +39,22 @@
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
                             <i class="fas fa-map-marker-alt" style="color: var(--color-footer-icon);"></i>
                         </div>
-                        <span style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.4;">Dubai, UAE</span>
+                        <span style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.4; padding-left: 10px;">{{ $settings['contact_address'] ?? 'Dubai, UAE' }}</span>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
                             <i class="fas fa-phone-alt" style="color: var(--color-footer-icon);"></i>
                         </div>
-                        <a href="tel:+971585858348" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">+971 5858 58348</a>
+                        <a href="tel:{{ str_replace(' ', '', $settings['contact_phone'] ?? '+971585858348') }}" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; padding-left: 10px;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">{{ $settings['contact_phone'] ?? '+971 5858 58348' }}</a>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-box-modern" style="width: 32px; height: 32px; font-size: 0.8rem;">
                             <i class="fas fa-envelope" style="color: var(--color-footer-icon);"></i>
                         </div>
-                        <a href="mailto:info@myfitness.ae" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">info@myfitness.ae</a>
+                        <a href="mailto:{{ $settings['contact_email'] ?? 'info@myfitness.ae' }}" style="color: var(--color-text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; padding-left: 10px;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">{{ $settings['contact_email'] ?? 'info@myfitness.ae' }}</a>
                     </div>
                 </div>
 
-                @php
-                    $settings = app(\App\Services\SiteSettingService::class)->getAllSettings();
-                @endphp
                 <div class="d-flex gap-3">
                     @if($settings['show_instagram'] == '1')
                         <a href="{{ $settings['social_instagram'] }}" class="social-icon-modern"><i class="fab fa-instagram fs-5"></i></a>

@@ -1,4 +1,7 @@
 <x-front.main-layout title="Contact Us | MyFitness Dubai">
+    @php
+        $settings = app(\App\Services\SiteSettingService::class)->getAllSettings();
+    @endphp
     <section class="premium-section" style="padding-top: 120px;">
         <div class="container">
             <div class="text-center mb-5">
@@ -49,9 +52,9 @@
                             <div style="width: 64px; height: 64px; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.3); color: var(--color-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
-                            <div>
+                            <div style="padding-left: 10px;">
                                 <div style="color: var(--color-text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Call / WhatsApp Support</div>
-                                <a href="tel:+971585858348" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">+971 5858 58348</a>
+                                <a href="tel:{{ str_replace(' ', '', $settings['contact_phone'] ?? '+971585858348') }}" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">{{ $settings['contact_phone'] ?? '+971 5858 58348' }}</a>
                             </div>
                         </div>
 
@@ -59,9 +62,9 @@
                             <div style="width: 64px; height: 64px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); color: var(--color-secondary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div>
+                            <div style="padding-left: 10px;">
                                 <div style="color: var(--color-text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Email Us</div>
-                                <a href="mailto:info@myfitness.ae" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">info@myfitness.ae</a>
+                                <a href="mailto:{{ $settings['contact_email'] ?? 'info@myfitness.ae' }}" style="color: var(--color-text); font-size: 1.25rem; font-weight: 800; text-decoration: none;">{{ $settings['contact_email'] ?? 'info@myfitness.ae' }}</a>
                             </div>
                         </div>
 
@@ -69,9 +72,9 @@
                             <div style="width: 64px; height: 64px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: var(--color-accent); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div>
+                            <div style="padding-left: 10px;">
                                 <div style="color: var(--color-text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Head Office</div>
-                                <div style="color: var(--color-text); font-size: 1rem; font-weight: 700; line-height: 1.5;">Dubai, UAE</div>
+                                <div style="color: var(--color-text); font-size: 1rem; font-weight: 700; line-height: 1.5;">{{ $settings['contact_address'] ?? 'Dubai, UAE' }}</div>
                             </div>
                         </div>
                     </div>

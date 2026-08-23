@@ -89,6 +89,9 @@ class SiteSettingService
 
             // Page backgrounds
             'login_bg_image'      => SiteSetting::get('login_bg_image', ''),
+            'contact_address'     => SiteSetting::get('contact_address', 'Dubai, UAE'),
+            'contact_phone'       => SiteSetting::get('contact_phone', '+971 5858 58348'),
+            'contact_email'       => SiteSetting::get('contact_email', 'info@myfitness.ae'),
         ];
     }
 

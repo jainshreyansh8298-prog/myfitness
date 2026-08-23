@@ -80,6 +80,11 @@ class SiteSettingSeeder extends Seeder
 
             // Announcements
             'show_announcements'    => '1',
+
+            // Contact Details
+            'contact_address'       => 'Dubai, UAE',
+            'contact_phone'         => '(+971) 5858 58348',
+            'contact_email'         => 'info@myfitness.ae',
         ];
 
         foreach ($defaults as $key => $val) {
