@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="glass-panel" style="border-radius: 24px; padding: 40px;">
+                    <div class="glass-panel" style="border-radius: 24px; padding: 40px; height: 500px; display: flex; flex-direction: column; justify-content: center;">
                         <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
                             We offer personal training, yoga, massage services, and more—delivered right to your home in Dubai and Abu Dhabi. With a focus on personalized care and convenience, we’re committed to guiding you through a wellness journey that fits your lifestyle.
                         </p>
