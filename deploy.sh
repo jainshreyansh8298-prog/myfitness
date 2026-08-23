@@ -13,6 +13,7 @@ git push live main
 echo "Running seeders and optimizing on remote server..."
 ssh -o StrictHostKeyChecking=no myfitnesscmsdev@190.92.174.128 "cd public_html && \
     git reset --hard HEAD && \
+    composer dump-autoload && \
     php artisan db:seed --class=SiteSettingContactDetailsSeeder --force && \
     php artisan optimize:clear && \
     php artisan optimize"
