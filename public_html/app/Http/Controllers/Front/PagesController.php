@@ -30,8 +30,10 @@ class PagesController extends Controller
 
     public function about()
     {
+        $page = \App\Models\Page::where('slug', 'about-us')->first();
+        $introPage = \App\Models\Page::where('slug', 'about-us-intro')->first();
         $categories = Category::withCount('services')->limit(10)->get();
-        return view('front.about',compact('categories'));
+        return view('front.about',compact('categories', 'page', 'introPage'));
     }
 
     public function coaches()

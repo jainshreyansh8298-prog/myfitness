@@ -5,9 +5,15 @@
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
                     KNOW <span style="color: var(--color-primary);">ABOUT US</span>
                 </h1>
+                @if(isset($introPage) && !empty($introPage->content))
+                    <div class="intro-dynamic-content" style="color: var(--color-text-muted); max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                        {!! $introPage->content !!}
+                    </div>
+                @elseif(empty($page) || empty($page->content))
                 <p style="color: var(--color-text-muted); max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
                     At Myfitness.ae, we make wellness simple, accessible, and affordable. Whether you're aiming to get stronger, reduce stress, or improve your overall health, our certified professionals are here to support your goals.
                 </p>
+                @endif
             </div>
 
             <div class="row g-5 align-items-center mb-5">
@@ -20,12 +26,18 @@
 
                 <div class="col-lg-6">
                     <div class="glass-panel" style="border-radius: 24px; padding: 40px; height: 500px; display: flex; flex-direction: column; justify-content: center;">
-                        <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
-                            We offer personal training, yoga, massage services, and more—delivered right to your home in Dubai and Abu Dhabi. With a focus on personalized care and convenience, we’re committed to guiding you through a wellness journey that fits your lifestyle.
-                        </p>
-                        <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;">
-                            Start your transformation with Myfitness.ae and experience expert support, on your terms, at your doorstep.
-                        </p>
+                        @if(isset($page) && !empty($page->content))
+                            <div class="dynamic-content">
+                                {!! $page->content !!}
+                            </div>
+                        @else
+                            <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
+                                We offer personal training, yoga, massage services, and more—delivered right to your home in Dubai and Abu Dhabi. With a focus on personalized care and convenience, we’re committed to guiding you through a wellness journey that fits your lifestyle.
+                            </p>
+                            <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;">
+                                Start your transformation with Myfitness.ae and experience expert support, on your terms, at your doorstep.
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
