@@ -3,10 +3,10 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h1 style="font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 16px;">
-                    ABOUT <span style="color: var(--color-primary);">MY FITNESS</span>
+                    KNOW <span style="color: var(--color-primary);">ABOUT US</span>
                 </h1>
-                <p style="color: var(--color-text-muted); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
-                    We bring fitness, personal training, yoga, and recovery services directly to your home, office, or private pool in Dubai & Abu Dhabi.
+                <p style="color: var(--color-text-muted); max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                    At Myfitness.ae, we make wellness simple, accessible, and affordable. Whether you're aiming to get stronger, reduce stress, or improve your overall health, our certified professionals are here to support your goals.
                 </p>
             </div>
 
@@ -20,25 +20,12 @@
 
                 <div class="col-lg-6">
                     <div class="glass-panel" style="border-radius: 24px; padding: 40px;">
-                        <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 16px; color: var(--brand-text);">OUR MISSION</h2>
-                        <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">
-                            At MyFitness, we believe staying fit should be convenient and stress-free. No wasted travel time in traffic or crowded gym memberships. Our platform connects you with background-checked, certified master trainers who deliver tailored fitness workouts directly to your doorstep.
+                        <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
+                            We offer personal training, yoga, massage services, and more—delivered right to your home in Dubai and Abu Dhabi. With a focus on personalized care and convenience, we’re committed to guiding you through a wellness journey that fits your lifestyle.
                         </p>
-                        
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div style="background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); padding: 24px; border-radius: 16px; text-align: center; transition: var(--transition-fast);" onmouseover="this.style.background='rgba(6,182,212,0.1)'" onmouseout="this.style.background='rgba(6,182,212,0.05)'">
-                                    <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-stats);">5,000+</div>
-                                    <div style="color: var(--color-text); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-top: 8px;">Clients Served</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 24px; border-radius: 16px; text-align: center; transition: var(--transition-fast);" onmouseover="this.style.background='rgba(59,130,246,0.1)'" onmouseout="this.style.background='rgba(59,130,246,0.05)'">
-                                    <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-stats);">100%</div>
-                                    <div style="color: var(--color-text); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-top: 8px;">Certified Coaches</div>
-                                </div>
-                            </div>
-                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;">
+                            Start your transformation with Myfitness.ae and experience expert support, on your terms, at your doorstep.
+                        </p>
                     </div>
                 </div>
             </div>
