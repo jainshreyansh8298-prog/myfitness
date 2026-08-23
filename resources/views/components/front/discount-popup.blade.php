@@ -12,7 +12,7 @@
         
         <span class="discount-tag-badge">🎁 FIRST BOOKING SPECIAL</span>
         
-        <h2 class="text-gradient" style="font-size: 2.2rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase; letter-spacing: -1px; line-height: 1.2;">
+        <h2 class="text-gradient" style="-webkit-text-fill-color: var(--color-primary); font-size: 2.2rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase; letter-spacing: -1px; line-height: 1.2;">
             {{ $headline }}
         </h2>
         
