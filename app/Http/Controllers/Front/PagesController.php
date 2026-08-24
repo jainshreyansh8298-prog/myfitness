@@ -137,7 +137,9 @@ class PagesController extends Controller
             'areas','category',
         ]);
 
-        return view('front.single-service',compact('service'));
+        $areas = \App\Models\Area::orderBy('name', 'asc')->get();
+
+        return view('front.single-service',compact('service', 'areas'));
     }
 
     public function forgot()

@@ -78,7 +78,7 @@
                             <div class="mb-4" id="areaSelectContainer">
                                 <label class="form-label" style="color: var(--brand-text); font-weight: 600; font-size: 0.95rem;">3. Select Area in UAE</label>
                                 <select name="area_id" id="areaSelect" class="form-select" style="background: var(--brand-bg); border: 1px solid var(--brand-card-border); color: var(--brand-text); height: 52px; border-radius: 8px;">
-                                    @foreach($service->areas as $area)
+                                    @foreach($areas as $area)
                                         <option value="{{ $area->id }}">{{ $area->name }}</option>
                                     @endforeach
                                 </select>
@@ -86,7 +86,11 @@
 
                             <div class="mb-4">
                                 <label class="form-label" style="color: var(--brand-text); font-weight: 600; font-size: 0.95rem;">4. Preferred Date & Time</label>
-                                <input type="text" name="dtime" id="datetimePicker" class="form-control" required placeholder="Select date and time slot..." style="background: var(--brand-bg); border: 1px solid var(--brand-card-border); color: var(--brand-text); height: 52px; border-radius: 8px;">
+                                <div class="d-flex gap-2">
+                                    <input type="date" id="nativeDate" class="form-control" required min="{{ date('Y-m-d') }}" style="background: var(--brand-bg); border: 1px solid var(--brand-card-border); color: var(--brand-text); height: 52px; border-radius: 8px;">
+                                    <input type="time" id="nativeTime" class="form-control" required style="background: var(--brand-bg); border: 1px solid var(--brand-card-border); color: var(--brand-text); height: 52px; border-radius: 8px;">
+                                </div>
+                                <input type="hidden" name="dtime" id="hiddenDtime">
                             </div>
 
                             <div class="mb-5">
@@ -104,17 +108,17 @@
         </div>
     </section>
 
-    <!-- Flatpickr Date Time Picker -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            flatpickr("#datetimePicker", {
-                enableTime: true,
-                minDate: "today",
-                dateFormat: "Y-m-d H:i",
-                minTime: "07:00",
-                maxTime: "22:00"
+            const nativeDate = document.getElementById('nativeDate');
+            const nativeTime = document.getElementById('nativeTime');
+            const hiddenDtime = document.getElementById('hiddenDtime');
+            const form = nativeDate.closest('form');
+
+            form.addEventListener('submit', function(e) {
+                if (nativeDate.value && nativeTime.value) {
+                    hiddenDtime.value = nativeDate.value + ' ' + nativeTime.value;
+                }
             });
 
             const basePriceAfter = {{ $service->price_after }};
