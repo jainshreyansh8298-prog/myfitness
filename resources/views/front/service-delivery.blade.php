@@ -20,6 +20,37 @@
                         <div class="policy-content">
                             {!! $page->content ?? '' !!}
                         </div>
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const policyContent = document.querySelector('.policy-content');
+                                if (policyContent && window.location.hash) {
+                                    // Extract search term from hash (e.g. 'cancellation' or 'refund')
+                                    let searchTerm = window.location.hash.substring(1).toLowerCase();
+                                    
+                                    // Handle user's possible typo 'cancallation'
+                                    if (searchTerm === 'cancallation') searchTerm = 'cancellation';
+                                    
+                                    const elements = policyContent.querySelectorAll('h1, h2, h3, h4, h5, h6, strong, p, span, li');
+                                    let targetElement = null;
+                                    
+                                    for (let i = 0; i < elements.length; i++) {
+                                        if (elements[i].textContent.toLowerCase().includes(searchTerm)) {
+                                            targetElement = elements[i];
+                                            break;
+                                        }
+                                    }
+                                    
+                                    if (targetElement) {
+                                        setTimeout(() => {
+                                            const yOffset = -100; // Offset for fixed header
+                                            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                            window.scrollTo({top: y, behavior: 'smooth'});
+                                        }, 200);
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
