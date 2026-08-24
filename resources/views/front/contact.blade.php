@@ -9,7 +9,7 @@
                     BECOME A <span style="color: var(--color-primary);">PARTNER</span>
                 </h1>
                 <p style="color: var(--color-text-muted); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
-                    Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
+                    {!! strip_tags(\App\Models\Page::where('slug', 'become-partner')->value('content') ?? "Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.") !!}
                 </p>
             </div>
 

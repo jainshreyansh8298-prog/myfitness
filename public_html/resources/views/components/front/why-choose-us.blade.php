@@ -84,7 +84,7 @@
                     <div class="banner-content">
                         <h3 style="font-size: 2rem; font-weight: 800; color: var(--brand-text); margin-bottom: 8px;">Start as Business Partner?</h3>
                         <p style="color: var(--brand-text-muted); font-size: 1.1rem; margin: 0; max-width: 700px;">
-                            Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
+                            {!! strip_tags(\App\Models\Page::where('slug', 'become-partner')->value('content') ?? "Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.") !!}
                         </p>
                     </div>
                     <a href="/contact" class="modern-btn">Start as Business Partner? <i class="fas fa-arrow-right ms-2"></i></a>

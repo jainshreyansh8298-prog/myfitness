@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             AreaSeeder::class,
             CoachSeeder::class,
             AnnouncementSeeder::class,
+            BecomePartnerPageSeeder::class,
         ]);
     }
 }

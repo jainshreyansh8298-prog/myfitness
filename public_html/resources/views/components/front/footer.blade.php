@@ -95,8 +95,8 @@
                     <a href="{{ route('front.termsConditions') }}" class="footer-link m-0" style="font-size: 1.05rem;">Terms & Conditions</a>
                     <a href="{{ route('front.cookiePolicy') }}" class="footer-link m-0" style="font-size: 1.05rem;">Cookie Policy</a>
                     <a href="{{ route('front.serviceDelivery') }}" class="footer-link m-0" style="font-size: 1.05rem;">Service Delivery</a>
-                    <a href="{{ route('front.serviceDelivery') }}" class="footer-link m-0" style="font-size: 1.05rem;">Refund Process</a>
-                    <a href="{{ route('front.serviceDelivery') }}" class="footer-link m-0" style="font-size: 1.05rem;">Cancellation</a>
+                    <a href="{{ route('front.serviceDelivery') }}#refund" class="footer-link m-0" style="font-size: 1.05rem;">Refund Process</a>
+                    <a href="{{ route('front.serviceDelivery') }}#cancellation" class="footer-link m-0" style="font-size: 1.05rem;">Cancellation</a>
                 </div>
             </div>
 
