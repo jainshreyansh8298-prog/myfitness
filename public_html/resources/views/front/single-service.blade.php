@@ -38,7 +38,7 @@
 
                     <div style="background: var(--brand-card-bg); border: 1px solid var(--brand-card-border); border-radius: 16px; padding: 36px; color: var(--brand-text-muted); line-height: 1.8; font-size: 1.05rem;">
                         <h3 style="color: var(--brand-text); font-weight: 700; font-size: 1.4rem; margin-bottom: 20px;">Program Overview & What's Included</h3>
-                        {!! nl2br(e($service->description)) !!}
+                        {!! $service->description !!}
                     </div>
                 </div>
 
