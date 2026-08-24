@@ -43,7 +43,7 @@
                             <h3 class="text-white mb-2 category-title" style="text-align: center !important;">{{ $category->name }}</h3>
                             
                             <div style="text-align: center !important; width: 100%; margin-top: 15px;">
-                                <span class="category-custom-badge" style="{{ $category->color ? 'background-color: ' . $category->color . ' !important;' : '' }}">{{ $category->services_count }} Classes</span>
+                                <span class="category-custom-badge" style="{{ $category->color ? 'background-color: ' . $category->color . ' !important;' : '' }}">{{ $category->services_count }} Services</span>
                             </div>
                         </div>
                         
