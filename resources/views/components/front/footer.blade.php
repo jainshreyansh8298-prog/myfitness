@@ -112,7 +112,7 @@
         </div>
 
         <div class="pt-4 pb-2 border-top d-flex flex-column flex-md-row align-items-center justify-content-between" style="border-color: var(--color-border) !important;">
-            <p class="mb-0" style="color: var(--color-text-muted); font-size: 0.95rem;">© {{ date('Y') }} MyFitness. All rights reserved.</p>
+            <p class="mb-0" style="color: var(--color-text-muted); font-size: 0.95rem;">All copyright © 2022-{{date("Y")}} Reserved</p>
         </div>
     </div>
 </footer>
