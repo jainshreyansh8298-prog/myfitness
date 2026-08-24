@@ -643,11 +643,33 @@ body.premium-theme .nice-select .option.selected.focus {
   text-decoration: none;
 }
 .social-icon-modern:hover {
-  background: var(--brand-primary);
-  border-color: var(--brand-primary);
-  color: var(--color-bg);
+  color: #ffffff;
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px var(--color-primary-glow);
+}
+.social-icon-modern.brand-facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  box-shadow: 0 10px 20px rgba(24, 119, 242, 0.3);
+}
+.social-icon-modern.brand-twitter:hover {
+  background: #1DA1F2;
+  border-color: #1DA1F2;
+  box-shadow: 0 10px 20px rgba(29, 161, 242, 0.3);
+}
+.social-icon-modern.brand-instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3);
+}
+.social-icon-modern.brand-linkedin:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 10px 20px rgba(10, 102, 194, 0.3);
+}
+.social-icon-modern.brand-whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 .icon-box-modern {
   display: flex;
