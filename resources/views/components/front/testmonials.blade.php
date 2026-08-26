@@ -139,44 +139,7 @@
         text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
     }
     
-    /* Slick Dots Customization */
-    .testimonial-carousel .slick-dots {
-        position: absolute;
-        bottom: -50px;
-        list-style: none;
-        display: flex !important;
-        justify-content: center;
-        gap: 12px;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-    .testimonial-carousel .slick-dots li {
-        margin: 0;
-    }
-    .testimonial-carousel .slick-dots li button {
-        font-size: 0;
-        line-height: 0;
-        display: block;
-        width: 12px;
-        height: 12px;
-        padding: 0;
-        cursor: pointer;
-        color: transparent;
-        border: 0;
-        outline: none;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
-    .testimonial-carousel .slick-dots li.slick-active button {
-        background: var(--brand-primary);
-        transform: scale(1.4);
-        box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
-    }
-    .testimonial-carousel .slick-dots li button:before {
-        display: none;
-    }
+
 </style>
 
 <script>
@@ -190,7 +153,7 @@
                 speed: 300,
                 infinite: true,
                 arrows: false,
-                dots: true,
+                dots: false,
                 pauseOnHover: true,
                 swipeToSlide: true
             });

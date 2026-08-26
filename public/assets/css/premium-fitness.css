@@ -744,37 +744,47 @@ body.premium-theme .nice-select .option.selected.focus {
 
 .slick-dots li button:before { color: var(--brand-primary) !important; opacity: 0.4 !important; font-size: 10px !important; } .slick-dots li.slick-active button:before { color: var(--brand-primary) !important; opacity: 1 !important; transform: scale(1.4); transition: transform 0.3s ease; }
 
-/* Scroll to Top Button */
+/* Scroll to Top Button - Modern Premium Design */
 .scroll-to-top {
   position: fixed;
   bottom: 110px;
   right: 40px;
-  background-color: var(--color-primary, #111);
-  color: #fff;
-  width: 50px;
-  height: 50px;
+  background: linear-gradient(135deg, var(--brand-primary, #3b82f6), #0ea5e9);
+  color: #ffffff;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 22px;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
   z-index: 1049;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
 }
 
 .scroll-to-top.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes gym-squat-jump {
+  0% { transform: translateY(0) scale(1); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); }
+  20% { transform: translateY(8px) scale(1.15, 0.85); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); } /* Squat down, gather energy */
+  50% { transform: translateY(-18px) scale(0.9, 1.15); box-shadow: 0 25px 40px rgba(59, 130, 246, 0.8); } /* Explosive jump up */
+  70% { transform: translateY(-5px) scale(1.05, 0.95); box-shadow: 0 15px 25px rgba(59, 130, 246, 0.5); } /* Landing cushion */
+  100% { transform: translateY(-8px) scale(1.05); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.6); } /* Hover state settle */
 }
 
 .scroll-to-top:hover {
-  background-color: var(--color-text, #000);
-  color: #fff;
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0ea5e9, var(--brand-primary, #3b82f6));
+  color: #ffffff;
+  animation: gym-squat-jump 0.7s ease forwards;
 }
 
 @media (max-width: 768px) {
