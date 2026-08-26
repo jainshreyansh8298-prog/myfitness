@@ -31,6 +31,13 @@
     </a>
     @endif
 
+    <!-- Circular Progress Scroll To Top -->
+    <div class="progress-wrap" id="progressWrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+    </div>
+
 
 
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -78,9 +85,36 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const footerScrollToTop = document.getElementById('footerScrollToTop');
-            if(footerScrollToTop) {
-                footerScrollToTop.addEventListener('click', function(e) {
+            const progressWrap = document.getElementById('progressWrap');
+            if (progressWrap) {
+                const progressPath = document.querySelector('.progress-wrap path');
+                const pathLength = progressPath.getTotalLength();
+                
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+                progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+                progressPath.style.strokeDashoffset = pathLength;
+                progressPath.getBoundingClientRect();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+                
+                const updateProgress = function () {
+                    const scroll = window.scrollY || window.pageYOffset;
+                    const height = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                };
+                
+                updateProgress();
+                window.addEventListener('scroll', updateProgress);
+                
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 150) {
+                        progressWrap.classList.add('active-progress');
+                    } else {
+                        progressWrap.classList.remove('active-progress');
+                    }
+                });
+                
+                progressWrap.addEventListener('click', function(e) {
                     e.preventDefault();
                     window.scrollTo({
                         top: 0,
