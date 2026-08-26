@@ -111,8 +111,12 @@
             </div>
         </div>
 
-        <div class="pt-4 pb-2 border-top d-flex flex-column flex-md-row align-items-center justify-content-between" style="border-color: var(--color-border) !important;">
-            <p class="mb-0" style="color: var(--color-text-muted); font-size: 0.95rem;">All copyright © 2022-{{date("Y")}} Reserved</p>
+        <div class="pt-4 pb-3 border-top d-flex flex-column align-items-center justify-content-center gap-2" style="border-color: var(--color-border) !important;">
+            <a href="#" id="footerScrollToTop" class="text-decoration-none d-inline-flex align-items-center gap-2 mb-2" style="color: var(--color-text-muted); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;" onmouseover="this.style.color='var(--brand-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                <span>Back to top</span>
+                <i class="fas fa-chevron-up"></i>
+            </a>
+            <p class="mb-0 text-center" style="color: var(--color-text-muted); font-size: 0.95rem;">All copyright © 2022-{{date("Y")}} Reserved</p>
         </div>
     </div>
 </footer>

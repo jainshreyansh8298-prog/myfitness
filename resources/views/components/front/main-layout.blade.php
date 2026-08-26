@@ -31,10 +31,7 @@
     </a>
     @endif
 
-    <!-- Scroll To Top Button -->
-    <a href="#" class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
+
 
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-migrate.min.js') }}"></script>
@@ -81,16 +78,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            if(scrollToTopBtn) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 300) {
-                        scrollToTopBtn.classList.add('show');
-                    } else {
-                        scrollToTopBtn.classList.remove('show');
-                    }
-                });
-                scrollToTopBtn.addEventListener('click', function(e) {
+            const footerScrollToTop = document.getElementById('footerScrollToTop');
+            if(footerScrollToTop) {
+                footerScrollToTop.addEventListener('click', function(e) {
                     e.preventDefault();
                     window.scrollTo({
                         top: 0,
