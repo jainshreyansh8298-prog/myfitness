@@ -322,6 +322,20 @@
                                     <input type="checkbox" class="custom-control-input" id="swFaqs" name="show_faqs" value="1" {{ $settings['show_faqs'] == '1' ? 'checked' : '' }}>
                                     <label class="custom-control-label font-weight-bold" for="swFaqs">Compact FAQs Section</label>
                                 </div>
+                                <h6 class="font-weight-bold mb-3 mt-4"><i class="fas fa-handshake mr-2"></i>Business Partner Banner</h6>
+                                <div class="form-group pl-4 mb-2">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Banner Background Image</label>
+                                    @if(!empty($settings['partner_banner_bg_image']))
+                                        <div class="mb-2 p-2 rounded" style="background:#f8f9fc;">
+                                            <img src="{{ $settings['partner_banner_bg_image'] }}" alt="Partner Banner BG" style="max-height:80px; width:auto; border-radius:4px;">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="partner_banner_bg_image" class="form-control-file" accept="image/*">
+                                </div>
+                                <div class="form-group pl-4 mb-4">
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Banner Text Color</label>
+                                    <input type="color" name="partner_banner_text_color" class="form-control form-control-sm" style="max-width: 150px;" value="{{ $settings['partner_banner_text_color'] ?? '#fafafa' }}">
+                                </div>
                             </div>
 
                             <!-- Tab: Socials -->

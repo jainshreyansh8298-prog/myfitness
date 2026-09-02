@@ -80,14 +80,26 @@
             </div>
             
             <div class="col-lg-12 mt-5">
-                <div class="business-partner-banner">
-                    <div class="banner-content">
-                        <h3 style="font-size: 2rem; font-weight: 800; color: var(--brand-text); margin-bottom: 8px;">Start as Business Partner?</h3>
-                        <p style="color: var(--brand-text-muted); font-size: 1.1rem; margin: 0; max-width: 700px;">
-                            {!! strip_tags(\App\Models\Page::where('slug', 'become-partner')->value('content') ?? "Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.") !!}
+                @php
+                    $partnerBgImage = \App\Models\SiteSetting::get('partner_banner_bg_image');
+                    $partnerTextColor = \App\Models\SiteSetting::get('partner_banner_text_color');
+                    
+                    $bannerStyle = "";
+                    if (!empty($partnerBgImage)) {
+                        $bannerStyle = "background-image: url('{$partnerBgImage}'); background-size: cover; background-position: center; border: none;";
+                    }
+                @endphp
+                <div class="business-partner-banner" style="{{ $bannerStyle }}">
+                    @if(!empty($partnerBgImage))
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1; pointer-events: none;"></div>
+                    @endif
+                    <div class="banner-content" style="position: relative; z-index: 2;">
+                        <h3 style="font-size: 2rem; font-weight: 800; color: {{ $partnerTextColor ?: 'var(--brand-text)' }}; margin-bottom: 8px;">Start as Business Partner?</h3>
+                        <p style="color: {{ $partnerTextColor ? $partnerTextColor . 'cc' : 'var(--brand-text-muted)' }}; font-size: 1.1rem; margin: 0; max-width: 700px;">
+                            Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.
                         </p>
                     </div>
-                    <a href="/contact" class="modern-btn">Start as Business Partner? <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="/contact" class="modern-btn" style="position: relative; z-index: 2;">Start as Business Partner? <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
