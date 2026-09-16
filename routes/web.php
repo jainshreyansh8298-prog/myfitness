@@ -40,6 +40,7 @@ Route::get('coaches', [PagesController::class, 'coaches'])->name('front.coaches'
 Route::get('privacy-policy', [PagesController::class, 'privacyPolicy'])->name('front.privacyPolicy');
 Route::get('terms-conditions', [PagesController::class, 'termsConditions'])->name('front.termsConditions');
 Route::get('faq', [PagesController::class, 'faq'])->name('front.faq');
+Route::get('careers', [PagesController::class, 'careers'])->name('front.careers');
 Route::get('cookie-policy', [PagesController::class, 'cookiePolicy'])->name('front.cookiePolicy');
 Route::get('service-delivery', [PagesController::class, 'serviceDelivery'])->name('front.serviceDelivery');
 Route::post('contact-forms/create', [ContactFormController::class, 'store'])

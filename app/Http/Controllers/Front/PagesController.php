@@ -146,4 +146,10 @@ class PagesController extends Controller
     {
         return view('front.forgot');
     }
+
+    public function careers()
+    {
+        $careers = \App\Models\Career::where('is_active', true)->orderBy('sort_order')->get();
+        return view('front.careers', compact('careers'));
+    }
 }

@@ -84,6 +84,7 @@
                     <a href="{{ route('front.blogs') }}" class="footer-link m-0" style="font-size: 1.05rem;">Blog</a>
                     <a href="{{ route('front.contact') }}" class="footer-link m-0" style="font-size: 1.05rem;">Contact</a>
                     <a href="{{ route('front.faq') }}" class="footer-link m-0" style="font-size: 1.05rem;">FAQ</a>
+                    <a href="{{ route('front.careers') }}" class="footer-link m-0" style="font-size: 1.05rem;">Careers</a>
                 </div>
             </div>
 

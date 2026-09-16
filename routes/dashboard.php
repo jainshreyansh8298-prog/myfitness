@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SiteSettingController;
 use App\Http\Controllers\Dashboard\TestimonialController;
 use App\Http\Controllers\Dashboard\FaqController;
+use App\Http\Controllers\Dashboard\CareerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
@@ -51,6 +52,9 @@ Route::group([
 
     // FAQs CMS
     Route::resource('faqs', FaqController::class)->except(['show']);
+
+    // Careers CMS
+    Route::resource('careers', CareerController::class)->except(['show']);
 
     // Pages CMS
     Route::resource('pages', \App\Http\Controllers\Dashboard\PageController::class)->except(['create', 'store', 'show', 'destroy']);
