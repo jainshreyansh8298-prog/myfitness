@@ -27,19 +27,19 @@
         <!-- Right Side Action Buttons & Mobile Menu Toggle -->
         <div class="d-flex align-items-center gap-4">
             <div class="d-none d-lg-flex align-items-center gap-4">
+                <a href="{{ route('front.contact') }}" style="color: var(--color-text); font-weight: 600; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                    BECOME A PARTNER
+                </a>
+
                 @guest
-                    <a href="{{ route('front.login') }}" style="color: var(--color-text); font-weight: 600; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
-                        <i class="far fa-user"></i> LOGIN
+                    <a href="{{ route('front.login') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
+                        <i class="far fa-user"></i> LOGIN/REGISTER
                     </a>
                 @else
-                    <a href="{{ route('front.dashboard') }}" style="color: var(--color-text); font-weight: 600; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                    <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
                         <i class="fas fa-user-circle"></i> DASHBOARD
                     </a>
                 @endguest
-
-                <a href="{{ route('front.contact') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
-                    BECOME A PARTNER
-                </a>
             </div>
             
             <!-- Mobile Menu Toggle Button -->
@@ -59,13 +59,13 @@
     <a href="{{ route('front.blogs') }}" class="nav-link {{ Route::is('front.blogs*') ? 'text-gradient' : '' }}">Blogs</a>
     <hr style="border-color: var(--color-border); margin: 20px 0;">
     
-    @guest
-        <a href="{{ route('front.login') }}" style="color: var(--color-text); font-weight: 700; text-decoration: none; font-size: 1.2rem; margin-bottom: 20px;"><i class="far fa-user me-2"></i>LOGIN</a>
-    @else
-        <a href="{{ route('front.dashboard') }}" style="color: var(--color-text); font-weight: 700; text-decoration: none; font-size: 1.2rem; margin-bottom: 20px;"><i class="fas fa-user-circle me-2"></i>DASHBOARD</a>
-    @endguest
+    <a href="{{ route('front.contact') }}" style="color: var(--color-text); font-weight: 700; text-decoration: none; font-size: 1.2rem; margin-bottom: 20px;">BECOME A PARTNER</a>
 
-    <a href="{{ route('front.contact') }}" class="btn-premium btn-accent text-center mt-2">BECOME A PARTNER</a>
+    @guest
+        <a href="{{ route('front.login') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;"><i class="far fa-user me-2"></i>LOGIN/REGISTER</a>
+    @else
+        <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;"><i class="fas fa-user-circle me-2"></i>DASHBOARD</a>
+    @endguest
 </div>
 
 <script>
