@@ -55,21 +55,21 @@
                     </div>
                 </div>
 
-                <div class="d-flex gap-3">
+                <div class="d-flex gap-4">
                     @if($settings['show_instagram'] == '1')
-                        <a href="{{ $settings['social_instagram'] }}" class="social-icon-modern brand-instagram"><i class="fab fa-instagram fs-5"></i></a>
+                        <a href="{{ $settings['social_instagram'] }}" class="social-icon-modern brand-instagram"><i class="fab fa-instagram fs-4"></i></a>
                     @endif
                     @if($settings['show_twitter'] == '1')
-                        <a href="{{ $settings['social_twitter'] }}" class="social-icon-modern brand-twitter"><i class="fab fa-twitter fs-5"></i></a>
+                        <a href="{{ $settings['social_twitter'] }}" class="social-icon-modern brand-twitter"><i class="fab fa-twitter fs-4"></i></a>
                     @endif
                     @if($settings['show_facebook'] == '1')
-                        <a href="{{ $settings['social_facebook'] }}" class="social-icon-modern brand-facebook"><i class="fab fa-facebook-f fs-5"></i></a>
+                        <a href="{{ $settings['social_facebook'] }}" class="social-icon-modern brand-facebook"><i class="fab fa-facebook-f fs-4"></i></a>
                     @endif
                     @if($settings['show_linkedin'] == '1')
-                        <a href="{{ $settings['social_linkedin'] }}" class="social-icon-modern brand-linkedin"><i class="fab fa-linkedin-in fs-5"></i></a>
+                        <a href="{{ $settings['social_linkedin'] }}" class="social-icon-modern brand-linkedin"><i class="fab fa-linkedin-in fs-4"></i></a>
                     @endif
                     @if($settings['show_whatsapp'] == '1')
-                        <a href="{{ $settings['social_whatsapp'] }}" class="social-icon-modern brand-whatsapp"><i class="fab fa-whatsapp fs-5"></i></a>
+                        <a href="{{ $settings['social_whatsapp'] }}" class="social-icon-modern brand-whatsapp"><i class="fab fa-whatsapp fs-4"></i></a>
                     @endif
                 </div>
             </div>
