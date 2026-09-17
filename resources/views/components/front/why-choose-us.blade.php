@@ -1,21 +1,28 @@
 <section class="why-choose-section">
     <div class="container">
+        @php
+            $whyMyFitnessPage = \App\Models\Page::where('slug', 'why-my-fitness')->first();
+        @endphp
         <div class="text-center mb-5 section-header">
             <span class="subtitle">Elevate Your Lifestyle</span>
             <h2>Why My Fitness?</h2>
             <div style="max-width: 1100px; margin: 0 auto; text-align: left; color: var(--brand-text-muted); line-height: 1.7; font-size: 1.1rem;">
-                <p>
-                    At My Fitness.ae, we bring fitness, wellness, and recovery services right to your doorstep—making it easier than ever to stay active, healthy, and stress-free in Dubai and Abu Dhabi. Whether you're looking for personal training at home, yoga sessions, a relaxing massage, spors coaching or other fitness services, our platform connects you with certified fitness professionals, yoga instructors, and massage therapists ready to support your wellness goals.
-                </p>
-                <p style="margin-top: 15px;">
-                    We understand that life gets busy, which is why we offer on-demand services designed to fit your schedule. Whether you're a working professional, a busy parent, or simply someone who values flexibility, our expert team brings personalized workouts, guided yoga, and stress-relieving massages to your home, office, or even your favorite outdoor space.
-                </p>
-                <p style="margin-top: 15px;">
-                    With My Fitness, you can also book boxing, kickboxing, MMA coaching, running sessions, and more—all from top fitness professionals. Our easy-to-use platform allows you to schedule sessions, track progress, and stay motivated with just a few clicks.
-                </p>
-                <p style="margin-top: 15px;">
-                    Take charge of your health and wellness with My Fitness.ae—your go-to destination for fitness and wellness in UAE. Stay fit, feel great, and reach your goals—on your terms.
-                </p>
+                @if($whyMyFitnessPage && !empty($whyMyFitnessPage->content))
+                    {!! $whyMyFitnessPage->content !!}
+                @else
+                    <p>
+                        At My Fitness.ae, we bring fitness, wellness, and recovery services right to your doorstep—making it easier than ever to stay active, healthy, and stress-free in Dubai and Abu Dhabi. Whether you're looking for personal training at home, yoga sessions, a relaxing massage, spors coaching or other fitness services, our platform connects you with certified fitness professionals, yoga instructors, and massage therapists ready to support your wellness goals.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        We understand that life gets busy, which is why we offer on-demand services designed to fit your schedule. Whether you're a working professional, a busy parent, or simply someone who values flexibility, our expert team brings personalized workouts, guided yoga, and stress-relieving massages to your home, office, or even your favorite outdoor space.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        With My Fitness, you can also book boxing, kickboxing, MMA coaching, running sessions, and more—all from top fitness professionals. Our easy-to-use platform allows you to schedule sessions, track progress, and stay motivated with just a few clicks.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Take charge of your health and wellness with My Fitness.ae—your go-to destination for fitness and wellness in UAE. Stay fit, feel great, and reach your goals—on your terms.
+                    </p>
+                @endif
             </div>
         </div>
 
