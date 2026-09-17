@@ -74,6 +74,14 @@
         </a>
     </li>
 
+    <!-- Careers CMS -->
+    <li class="nav-item {{ Route::is('admins.careers.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admins.careers.index') }}">
+            <i class="fas fa-briefcase text-info"></i>
+            <span> {{ __('Careers') }} </span>
+        </a>
+    </li>
+
     <!-- Pages CMS -->
     <li class="nav-item {{ Route::is('admins.pages.*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admins.pages.index') }}">
