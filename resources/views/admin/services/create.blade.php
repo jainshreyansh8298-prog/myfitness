@@ -68,7 +68,7 @@
 
             <div class="form-group">
                 <label for="">{{ __('Display Order') }}</label>
-                <input type="number" name="sort_order" class="form-control @error('sort_order') is-invalid @enderror" value="{{ old('sort_order') }}" placeholder="{{ __('Lower numbers show first. Leave blank to add at the end.') }}">
+                <input type="number" name="sort_order" class="form-control @error('sort_order') is-invalid @enderror" value="{{ old('sort_order') }}" placeholder="{{ __('1 shows first, 2 next, etc. Leave blank/0 to show at the end.') }}">
                 @error('sort_order')
                     <span class="form-error-message">{{ $message }}</span>
                 @enderror

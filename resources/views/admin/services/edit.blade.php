@@ -58,7 +58,7 @@
 
             <div class="form-group">
                 <label for="">{{ __('Display Order') }}</label>
-                <input type="number" name="sort_order" class="form-control" value="{{ old('sort_order') ?? $service->sort_order }}" placeholder="{{ __('Lower numbers show first.') }}">
+                <input type="number" name="sort_order" class="form-control" value="{{ old('sort_order') ?? $service->sort_order }}" placeholder="{{ __('1 shows first, 2 next, etc. 0 shows at the end.') }}">
             </div>
 
             <div class="form-group">

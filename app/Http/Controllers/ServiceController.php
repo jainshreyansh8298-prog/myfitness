@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::with('category')->orderBy('sort_order')->orderBy('id')->get();
+        $services = Service::with('category')->orderByRaw('sort_order = 0')->orderBy('sort_order')->orderBy('id')->get();
 
         return view('admin.services.index', compact('services'));
     }
