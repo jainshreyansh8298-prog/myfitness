@@ -13,9 +13,9 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $services = Service::where('is_featured', 1)->latest()->take(8)->get();
+        $services = Service::where('is_featured', 1)->orderBy('sort_order')->orderBy('id')->take(8)->get();
         if ($services->isEmpty()) {
-            $services = Service::latest()->take(8)->get();
+            $services = Service::orderBy('sort_order')->orderBy('id')->take(8)->get();
         }
         $blogs = \Illuminate\Support\Facades\Cache::remember('home_recent_blogs', 60, function () {
             return Blog::with(['category:id,name'])->select('id', 'slug', 'title', 'excerpt', 'image', 'created_at', 'category_id')->latest()->take(10)->get();
@@ -119,7 +119,7 @@ class PagesController extends Controller
         }
 
         return view('front.services',[
-            'services'                  =>$services->paginate(9),
+            'services'                  =>$services->orderBy('sort_order')->orderBy('id')->paginate(9),
             'areas'                     =>Area::select('id','name')->get(),
             'categories'                =>Category::select('id','name')->get(),
         ]);

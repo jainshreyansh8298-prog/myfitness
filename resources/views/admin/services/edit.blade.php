@@ -57,6 +57,11 @@
             </div>
 
             <div class="form-group">
+                <label for="">{{ __('Display Order') }}</label>
+                <input type="number" name="sort_order" class="form-control" value="{{ old('sort_order') ?? $service->sort_order }}" placeholder="{{ __('Lower numbers show first.') }}">
+            </div>
+
+            <div class="form-group">
                 <label for="">{{ __('Is Featured') }}</label>
                 <select name="is_featured" class="form-control">
                     <option value="1" {{ old('is_featured', $service->is_featured) == 1 ? 'selected' : '' }}>

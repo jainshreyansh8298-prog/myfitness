@@ -16,6 +16,7 @@ class Service extends Model
         'discount_percentage',
         'badge_text',
         'is_featured',
+        'sort_order',
         'image','slug'
     ];
 
@@ -23,6 +24,7 @@ class Service extends Model
         'price_after'               => 'float',
         'price_before'              => 'float',
         'is_featured'               => 'boolean',
+        'sort_order'                => 'integer',
     ];
 
     public function category()

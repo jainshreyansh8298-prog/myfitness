@@ -67,6 +67,14 @@
             </div>
 
             <div class="form-group">
+                <label for="">{{ __('Display Order') }}</label>
+                <input type="number" name="sort_order" class="form-control @error('sort_order') is-invalid @enderror" value="{{ old('sort_order') }}" placeholder="{{ __('Lower numbers show first. Leave blank to add at the end.') }}">
+                @error('sort_order')
+                    <span class="form-error-message">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group">
                 <label for="">{{ __('Is Featured') }}</label>
                 <select name="is_featured" class="form-control @error('is_featured') is-invalid @enderror">
                     <option value="1" {{ old('is_featured') == 1 ? 'selected' : '' }}>{{ __('Yes') }}

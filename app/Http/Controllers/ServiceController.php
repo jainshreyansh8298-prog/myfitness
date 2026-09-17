@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::with('category')->get();
+        $services = Service::with('category')->orderBy('sort_order')->orderBy('id')->get();
 
         return view('admin.services.index', compact('services'));
     }
@@ -44,6 +44,7 @@ class ServiceController extends Controller
             'is_featured'               => 'required|boolean',
             'image'                     => 'required|image|max:5120',
             'session_minutes'           => 'required|in:45,60,90',
+            'sort_order'                => 'nullable|integer|min:0',
         ]);
 
         $slug = Str::slug($request->name);
@@ -73,6 +74,7 @@ class ServiceController extends Controller
             'is_featured'                       => $request->is_featured,
             'image'                             => $image_path,
             'session_minutes'                   => $request->session_minutes,
+            'sort_order'                        => $request->filled('sort_order') ? $request->sort_order : ((int) Service::max('sort_order') + 1),
         ]);
 
         return redirect()->route('admins.services.index')
@@ -113,6 +115,7 @@ class ServiceController extends Controller
             'is_featured'               => 'required|boolean',
             'image'                     => 'nullable|image|max:5120',
             'session_minutes'           => 'required|in:45,60,90',
+            'sort_order'                => 'nullable|integer|min:0',
         ]);
 
         $slug = Str::slug($request->name);
@@ -145,6 +148,7 @@ class ServiceController extends Controller
             'is_featured'                       => $request->is_featured,
             'image'                             => $image_path,
             'session_minutes'                   => $request->session_minutes,
+            'sort_order'                        => $request->filled('sort_order') ? $request->sort_order : $service->sort_order,
         ]);
 
         return redirect()->route('admins.services.index')

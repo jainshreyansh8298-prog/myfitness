@@ -14,6 +14,7 @@
                     <thead>
                         <tr>
                             <th>{{ __('Serial') }}</th>
+                            <th>{{ __('Order') }}</th>
                             <th>{{ __('Name') }}</th>
                             {{-- <th>{{ __('Description') }}</th> --}}
                             <th>{{ __('Category Name') }}</th>
@@ -30,6 +31,7 @@
                         @foreach ($services as $service)
                             <tr >
                                 <td>{{ ++$i }}</td>
+                                <td>{{ $service->sort_order }}</td>
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->category?->name ?? 'Uncategorized' }}</td>
                                 <td>{{ $service->price_after }}</td>
