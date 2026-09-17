@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('services', function (Blueprint $table) {
-            $table->integer('sort_order')->default(0)->after('is_featured');
-        });
+        if (! Schema::hasColumn('services', 'sort_order')) {
+            Schema::table('services', function (Blueprint $table) {
+                $table->integer('sort_order')->default(0)->after('is_featured');
+            });
+        }
     }
 
     /**
@@ -21,8 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('services', function (Blueprint $table) {
-            $table->dropColumn('sort_order');
-        });
+        if (Schema::hasColumn('services', 'sort_order')) {
+            Schema::table('services', function (Blueprint $table) {
+                $table->dropColumn('sort_order');
+            });
+        }
     }
 };
