@@ -633,14 +633,19 @@ body.premium-theme .nice-select .option.selected.focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   transition: var(--transition-smooth);
   text-decoration: none;
+  font-size: 20px;
+  margin-right: 16px;
+}
+.social-icon-modern:last-child {
+  margin-right: 0;
 }
 .social-icon-modern:hover {
   color: #ffffff;
