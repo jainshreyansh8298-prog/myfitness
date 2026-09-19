@@ -6,6 +6,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         if (typeof CKEDITOR === 'undefined') return;
         document.querySelectorAll('textarea.editor').forEach(function (el) {
+            if (el.dataset.ckeditorInit) return;
+            el.dataset.ckeditorInit = '1';
             CKEDITOR.replace(el, { height: 400 });
         });
     });
