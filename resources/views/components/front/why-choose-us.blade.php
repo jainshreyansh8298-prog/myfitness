@@ -270,7 +270,7 @@
 
 .business-partner-banner .banner-image {
     flex-shrink: 0;
-    width: 260px;
+    width: 380px;
     max-width: 100%;
     position: relative;
     z-index: 2;
@@ -278,7 +278,7 @@
 
 .business-partner-banner .banner-image img {
     width: 100%;
-    height: auto;
+    height: 280px;
     border-radius: 16px;
     display: block;
     object-fit: cover;
