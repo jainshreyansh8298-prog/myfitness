@@ -324,10 +324,10 @@
                                 </div>
                                 <h6 class="font-weight-bold mb-3 mt-4"><i class="fas fa-handshake mr-2"></i>Business Partner Banner</h6>
                                 <div class="form-group pl-4 mb-2">
-                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Banner Background Image</label>
+                                    <label class="font-weight-bold text-muted" style="font-size: 0.9rem;">Banner Image (shown on the left)</label>
                                     @if(!empty($settings['partner_banner_bg_image']))
                                         <div class="mb-2 p-2 rounded" style="background:#f8f9fc;">
-                                            <img src="{{ $settings['partner_banner_bg_image'] }}" alt="Partner Banner BG" style="max-height:80px; width:auto; border-radius:4px;">
+                                            <img src="{{ $settings['partner_banner_bg_image'] }}" alt="Partner Banner" style="max-height:80px; width:auto; border-radius:4px;">
                                         </div>
                                     @endif
                                     <input type="file" name="partner_banner_bg_image" class="form-control-file" accept="image/*">
