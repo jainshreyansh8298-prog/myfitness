@@ -69,6 +69,21 @@ class SiteSettingController extends Controller
             }
         }
 
+        // Partner banner background image upload
+        unset($data['partner_banner_bg_image']);
+        if ($request->hasFile('partner_banner_bg_image')) {
+            $file = $request->file('partner_banner_bg_image');
+            if ($file->isValid()) {
+                $oldBg = SiteSetting::get('partner_banner_bg_image');
+                $path = $file->store('backgrounds', 'public');
+                $data['partner_banner_bg_image'] = \Illuminate\Support\Facades\Storage::url($path);
+
+                if ($oldBg && \Illuminate\Support\Str::startsWith($oldBg, '/storage/')) {
+                    \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $oldBg));
+                }
+            }
+        }
+
         $heroSlides = $data['hero_slides'] ?? [];
         if (is_array($heroSlides)) {
             $validSlides = [];
