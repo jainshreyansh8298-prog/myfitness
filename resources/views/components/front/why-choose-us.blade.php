@@ -6,7 +6,7 @@
         <div class="text-center mb-5 section-header">
             <span class="subtitle">Elevate Your Lifestyle</span>
             <h2>Why My Fitness?</h2>
-            <div style="max-width: 1100px; margin: 0 auto; text-align: left; color: var(--brand-text-muted); line-height: 1.7; font-size: 1.1rem;">
+            <div style="max-width: 1100px; margin: 0 auto; text-align: justify; color: var(--brand-text-muted); line-height: 1.7; font-size: 1.1rem;">
                 @if($whyMyFitnessPage && !empty($whyMyFitnessPage->content))
                     {!! $whyMyFitnessPage->content !!}
                 @else
@@ -82,6 +82,7 @@
             <div class="col-lg-12 mt-5">
                 <div class="business-partner-banner">
                     <div class="banner-content">
+                        
                         <h3 style="font-size: 2rem; font-weight: 800; color: var(--brand-text); margin-bottom: 8px;">Start as Business Partner?</h3>
                         <p style="color: var(--brand-text-muted); font-size: 1.1rem; margin: 0; max-width: 700px;">
                             {!! strip_tags(\App\Models\Page::where('slug', 'become-partner')->value('content') ?? "Are you a passionate fitness trainer or fitness professional looking to make a meaningful impact on people's lives? Join our team at My Fitness and connect with clients who are looking for personalized training that suits their unique needs. Fill out the form below with your details and take the first step towards a successful career in the fitness industry.") !!}

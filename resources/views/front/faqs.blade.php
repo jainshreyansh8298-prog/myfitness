@@ -1,5 +1,5 @@
 <x-front.main-layout title="Frequently Asked Questions | MyFitness">
-    <section class="padding-top-120 padding-bottom-100" style="background: var(--brand-bg); min-height: 100vh;">
+    <section class="padding-bottom-100" style="background: var(--brand-bg); min-height: 100vh;">
         <div class="container">
             <div class="text-center mb-5 mt-5">
                 <h1 style="font-size: 3rem; font-weight: 800; color: var(--brand-text); letter-spacing: -1px;">
