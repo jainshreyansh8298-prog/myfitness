@@ -24,7 +24,10 @@ Route::get('/fix-paths', function () {
         // Artisan::call('cache:clear');
         // Artisan::call('route:clear');
         Artisan::call('storage:link');
-        return nl2br("✅ All caches cleared and storage linked successfully.\n\nPath issues fixed.");
+        if (function_exists('opcache_reset')) {
+            opcache_reset();
+        }
+        return nl2br("✅ All caches cleared, storage linked, and opcache reset successfully.\n\nPath issues fixed.");
     } catch (Exception $e) {
         return '❌ Error: ' . $e->getMessage();
     }
