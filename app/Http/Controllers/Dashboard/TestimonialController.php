@@ -25,9 +25,17 @@ class TestimonialController extends Controller
             'name' => 'required|string|max:255',
             'content' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
+            'avatar' => 'nullable|image|max:5120',
         ]);
 
-        Testimonial::create($request->all());
+        $data = $request->except('avatar');
+
+        if ($request->hasFile('avatar')) {
+            $path = $request->file('avatar')->store('testimonials', 'public');
+            $data['avatar_url'] = \Illuminate\Support\Facades\Storage::url($path);
+        }
+
+        Testimonial::create($data);
 
         return redirect()->route('admins.testimonials.index')->with('success', 'Testimonial created successfully.');
     }
@@ -43,9 +51,22 @@ class TestimonialController extends Controller
             'name' => 'required|string|max:255',
             'content' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
+            'avatar' => 'nullable|image|max:5120',
         ]);
 
-        $testimonial->update($request->all());
+        $data = $request->except('avatar');
+
+        if ($request->hasFile('avatar')) {
+            $oldAvatar = $testimonial->avatar_url;
+            $path = $request->file('avatar')->store('testimonials', 'public');
+            $data['avatar_url'] = \Illuminate\Support\Facades\Storage::url($path);
+
+            if ($oldAvatar && \Illuminate\Support\Str::startsWith($oldAvatar, '/storage/')) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $oldAvatar));
+            }
+        }
+
+        $testimonial->update($data);
 
         return redirect()->route('admins.testimonials.index')->with('success', 'Testimonial updated successfully.');
     }

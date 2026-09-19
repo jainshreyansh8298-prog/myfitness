@@ -6,7 +6,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('admins.testimonials.store') }}" method="POST">
+            <form action="{{ route('admins.testimonials.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row">
@@ -32,8 +32,8 @@
                         </select>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label class="font-weight-bold">Avatar Photo URL</label>
-                        <input type="text" name="avatar_url" class="form-control" placeholder="https://images.unsplash.com/...">
+                        <label class="font-weight-bold">Avatar Photo</label>
+                        <input type="file" name="avatar" class="form-control-file" accept="image/*">
                     </div>
                 </div>
 

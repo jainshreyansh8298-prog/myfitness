@@ -18,20 +18,11 @@
                 
                 <div class="form-group">
                     <label for="content">Page Content</label>
-                    <textarea name="content" id="content" class="form-control" rows="20">{{ old('content', $page->content) }}</textarea>
+                    <textarea name="content" id="content" class="form-control editor" rows="20">{{ old('content', $page->content) }}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Save Changes</button>
             </form>
         </div>
     </div>
-
-    <x-slot name="scripts">
-        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-        <script>
-            CKEDITOR.replace('content', {
-                height: 500
-            });
-        </script>
-    </x-slot>
 </x-dashboard.main-layout>

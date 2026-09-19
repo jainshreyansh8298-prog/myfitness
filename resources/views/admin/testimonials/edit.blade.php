@@ -6,7 +6,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('admins.testimonials.update', $testimonial->id) }}" method="POST">
+            <form action="{{ route('admins.testimonials.update', $testimonial->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -33,8 +33,13 @@
                         </select>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label class="font-weight-bold">Avatar Photo URL</label>
-                        <input type="text" name="avatar_url" class="form-control" value="{{ $testimonial->avatar_url }}">
+                        <label class="font-weight-bold">Avatar Photo</label>
+                        @if(!empty($testimonial->avatar_url))
+                            <div class="mb-2">
+                                <img src="{{ $testimonial->avatar_url }}" alt="Current avatar" style="width:60px; height:60px; object-fit:cover; border-radius:50%;">
+                            </div>
+                        @endif
+                        <input type="file" name="avatar" class="form-control-file" accept="image/*">
                     </div>
                 </div>
 

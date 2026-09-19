@@ -1,6 +1,16 @@
 <script src="{{ asset('backend/js/sb-admin-2.min.js') }}"></script>
 <script src="{{ asset('backend/js/custom.js') }}"></script>
 
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof CKEDITOR === 'undefined') return;
+        document.querySelectorAll('textarea.editor').forEach(function (el) {
+            CKEDITOR.replace(el, { height: 400 });
+        });
+    });
+</script>
+
 @if ($errors->any())
     @foreach ($errors->all() as $error)
         <script>
