@@ -58,16 +58,25 @@ class UserDashboardController extends Controller
 
     public function userDashboard()
     {
-        $user = Auth::user();
-        $latest_orders = Order::with(['service'])
-            ->where('user_id', $user->id)->latest()->paginate(5);
-        return view(
-            'front.user-dashboard.dashboard',
-            [
-                // 'user'                      =>$user,
-                'latest_orders'             => $latest_orders,
-            ]
-        );
+       $user = Auth::user();
+
+    // Admin or User ID 1
+    if ($user->id == 1 || $user->role === 'admin') {
+        return view('admin.dashboard');
+    }
+
+    // Normal user dashboard
+    $latest_orders = Order::with(['service'])
+        ->where('user_id', $user->id)
+        ->latest()
+        ->paginate(5);
+
+    return view(
+        'front.user-dashboard.dashboard',
+        [
+            'latest_orders' => $latest_orders,
+        ]
+    );
     }
 
     public function userOrders()

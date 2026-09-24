@@ -36,12 +36,18 @@
                         <i class="far fa-user"></i> LOGIN/REGISTER
                     </a>
                 @else
-                    <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
-                        <i class="fas fa-user-circle"></i> DASHBOARD
-                    </a>
+                    @if(auth()->id() == 1)
+                        <a href="{{ route('admins.dashboard') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
+                            <i class="fas fa-user-circle"></i> DASHBOARD
+                        </a>
+                    @else
+                        <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent" style="padding: 12px 28px; font-size: 0.9rem; margin-left: 15px;">
+                            <i class="fas fa-user-circle"></i> DASHBOARD
+                        </a>
+                    @endif
                 @endguest
             </div>
-            
+
             <!-- Mobile Menu Toggle Button -->
             <button class="d-lg-none btn p-0" id="mobileMenuToggle" style="border: none; background: transparent; font-size: 1.5rem; color: var(--color-text);" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
@@ -58,13 +64,23 @@
     <a href="{{ route('front.about') }}" class="nav-link {{ Route::is('front.about') ? 'text-gradient' : '' }}">About</a>
     <a href="{{ route('front.blogs') }}" class="nav-link {{ Route::is('front.blogs*') ? 'text-gradient' : '' }}">Blogs</a>
     <hr style="border-color: var(--color-border); margin: 20px 0;">
-    
+
     <a href="{{ route('front.contact') }}" style="color: var(--color-text); font-weight: 700; text-decoration: none; font-size: 1.2rem; margin-bottom: 20px;">BECOME A PARTNER</a>
 
     @guest
-        <a href="{{ route('front.login') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;"><i class="far fa-user me-2"></i>LOGIN/REGISTER</a>
+        <a href="{{ route('front.login') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;">
+            <i class="far fa-user me-2"></i>LOGIN/REGISTER
+        </a>
     @else
-        <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;"><i class="fas fa-user-circle me-2"></i>DASHBOARD</a>
+        @if(auth()->id() == 1)
+            <a href="{{ route('admins.dashboard') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;">
+                <i class="fas fa-user-circle me-2"></i>DASHBOARD
+            </a>
+        @else
+            <a href="{{ route('front.dashboard') }}" class="btn-premium btn-accent text-center mt-2" style="display:flex; justify-content:center; align-items:center;">
+                <i class="fas fa-user-circle me-2"></i>DASHBOARD
+            </a>
+        @endif
     @endguest
 </div>
 
@@ -72,8 +88,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         const toggleBtn = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileNavMenu');
-        
-        if(toggleBtn && mobileMenu) {
+
+        if (toggleBtn && mobileMenu) {
             toggleBtn.addEventListener('click', function() {
                 mobileMenu.classList.toggle('active');
                 if (mobileMenu.classList.contains('active')) {
