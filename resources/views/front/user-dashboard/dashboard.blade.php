@@ -51,11 +51,11 @@
                                                 <td data-label="Order ID"> {{ $order->reference_code }} </td>
                                                 <td data-label="Order Date"> {{ $order->created_at->format('d M, Y') }}
                                                 </td>
-                                                <td data-label="Service Name"> {{ $order->service->name }} </td>
+                                                <td data-label="Service Name"> {{ $order->service->name ?? 'N/A' }} </td>
                                                 <td data-label="Service Date">
-                                                    {{ \Carbon\Carbon::parse($order->first_session_date)->format('d M, Y') }}
+                                                    {{ $order->first_session_date ? \Carbon\Carbon::parse($order->first_session_date)->format('d M, Y') : 'N/A' }}
                                                 </td>
-                                                <td data-label="Service Time"> {{ $order->service->time }} </td>
+                                                <td data-label="Service Time"> {{ $order->service->time ?? 'N/A' }} </td>
                                                 <td data-label="Pricing"> ${{ number_format($order->payed_amount, 2) }}
                                                 </td>
                                                 <td data-label="Payment Status">
